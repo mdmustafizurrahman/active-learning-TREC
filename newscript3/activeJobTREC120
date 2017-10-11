@@ -1,7 +1,7 @@
 #!/bin/bash
-#SBATCH -J topic_distribution_real_cost_command_line91# job name
-#SBATCH -o topic_distribution_real_cost_command_line91.o%j       # output and error file name (%j expands to jobID)
-#SBATCH -n 20              # total number of mpi tasks requested
+#SBATCH -J topic_distribution_real_cost_command_line120# job name
+#SBATCH -o topic_distribution_real_cost_command_line120.o%j       # output and error file name (%j expands to jobID)
+#SBATCH -n 10              # total number of mpi tasks requested
 #SBATCH -p gpu     # queue (partition) -- normal, development, etc.
 #SBATCH -t 11:59:59        # run time (hh:mm:ss) - 1.0 hours
 #SBATCH --mail-user=nahidcse05@gmail.com
@@ -19,4 +19,5 @@ python topic_distribution_real_cost_command_line.py WT2014 SPL 0.75 1 &
 python topic_distribution_real_cost_command_line.py WT2014 SPL 0.75 2 &
 python topic_distribution_real_cost_command_line.py WT2014 SPL 1.0 1 &
 python topic_distribution_real_cost_command_line.py WT2014 SPL 1.0 2 &
+
 wait

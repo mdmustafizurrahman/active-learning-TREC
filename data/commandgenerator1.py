@@ -32,7 +32,7 @@ for datasource in dataset: # 1
                                      '#SBATCH --mail-type=end    # email me when the job finishes\n' \
                                      '\nmodule load python'
 
-                    s = tmp + s + "\n"
+                    s = tmp + s + "\n\n wait"
                     filname = '/home/nahid/PycharmProjects/parser/newscript2/activeJobTREC8'+ str(variation)
                     text_file = open(filname, "w")
                     text_file.write(s)
