@@ -45,23 +45,24 @@ sampling=False # can be True or False
 command_prompt_use = True
 
 #if command_prompt_use == True:
+'''
 datasource = sys.argv[1] # can be  dataset = ['TREC8', 'gov2', 'WT']
 protocol = sys.argv[2]
 use_ranker = sys.argv[3]
 iter_sampling = sys.argv[4]
 correction = sys.argv[5] #'SAL' can be ['SAL', 'CAL', 'SPL']
 train_per_centage_flag = sys.argv[6]
-
+'''
 
 #parameter set # all FLAGS must be string
-'''
+
 datasource = 'WT2014'  # can be  dataset = ['TREC8', 'gov2', 'WT']
 protocol = 'CAL'  # 'SAL' can be ['SAL', 'CAL', 'SPL']
 use_ranker = 'True'
 iter_sampling = 'True'
 correction = 'False'
 train_per_centage_flag = 'True'
-'''
+
 print "Ranker_use", use_ranker
 print "iter_sampling", iter_sampling
 print "correction", correction
@@ -138,13 +139,13 @@ elif datasource=='gov2':
     start_topic = 801
     end_topic = 851
 elif datasource=='WT2013':
-    processed_file_location = '/home/nahid/UT_research/clueweb12/pythonprocessed/processed_new.txt'
-    RELEVANCE_DATA_DIR = '/home/nahid/UT_research/clueweb12/qrels/qrelsadhoc2013.txt'
+    processed_file_location = '/media/nahid/Windows8_OS/clueweb12/pythonprocessed/processed_new.txt'
+    RELEVANCE_DATA_DIR = '/media/nahid/Windows8_OS/clueweb12/qrels/qrelsadhoc2013.txt'
     start_topic = 201
     end_topic = 251
 else:
-    processed_file_location = '/home/nahid/UT_research/clueweb12/pythonprocessed/processed_new.txt'
-    RELEVANCE_DATA_DIR = '/home/nahid/UT_research/clueweb12/qrels/qrelsadhoc2014.txt'
+    processed_file_location = '/media/nahid/Windows8_OS/clueweb12/pythonprocessed/processed_new.txt'
+    RELEVANCE_DATA_DIR = '/media/nahid/Windows8_OS/clueweb12/qrels/qrelsadhoc2014.txt'
     start_topic = 251
     end_topic = 301
 
@@ -472,7 +473,7 @@ for test_size in test_size_set:
                 loopCounter = 0
 
                 seed_size_limit = math.ceil(train_per_centage[loopCounter] * len(X))
-                print "INitial Seed Limit", seed_size_limit
+                print "Initial Seed Limit", seed_size_limit
                 seed_start = 0
                 seed_counter = 0
                 while True:

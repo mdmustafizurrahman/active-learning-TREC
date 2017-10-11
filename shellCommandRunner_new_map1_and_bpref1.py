@@ -189,9 +189,11 @@ for use_map in map_list:
                 print var
                 plt.subplot(2,4,var)
 
+                plt.plot(x_labels_set, protocol_result['CAL'], '-b', marker='^', label='CAL, AUC:' + str(auc_CAL)[:4],
+                         linewidth=2.0)
+
                 plt.plot(x_labels_set, protocol_result['SAL'], '-r', marker='o', label='SAL, AUC:'+str(auc_SAL)[:4], linewidth=2.0)
-                plt.plot(x_labels_set, protocol_result['CAL'], '-b', marker='^', label='CAL, AUC:'+str(auc_CAL)[:4], linewidth=2.0)
-                plt.plot(x_labels_set, protocol_result['SPL'], '-g', marker='s', label='SPL, AUC:'+str(auc_SPL)[:4], linewidth=2.0)
+                plt.plot(x_labels_set, protocol_result['SPL'], '-g', marker='D', label='SPL, AUC:'+str(auc_SPL)[:4], linewidth=2.0)
 
 
 
@@ -201,18 +203,25 @@ for use_map in map_list:
                     plt.ylabel('tau correlation \n using bpref', size=16)
 
                 if var >=5:
-                    plt.xlabel('Percentage of human judgements', size=16)
+                    plt.xlabel('% of human judgments', size=16)
 
                 plt.ylim([0.7, 1])
                 plt.yticks([0.7, 0.8, .9, 1.0])
                 plt.legend(loc=4)
-                plt.title(datasource,size = 16)
+                if datasource == 'gov2':
+                    plt.title('TB\'06', size=16)
+                elif datasource == 'WT2013':
+                    plt.title('WT\'13', size=16)
+                elif datasource == 'WT2014':
+                    plt.title('WT\'14', size=16)
+                else:
+                    plt.title('Adhoc\'99', size=16)
                 plt.grid()
                 var = var + 1
 
 #plt.suptitle(s1, size=16)
 plt.tight_layout()
-plt.savefig(plotAddress + s1 + 'map1.pdf', format='pdf')
+plt.savefig(plotAddress + s1 + 'map2.pdf', format='pdf')
 
 
 

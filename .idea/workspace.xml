@@ -2,16 +2,160 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b0535bd4-8300-4b90-97dc-682304dbc22d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/shellCommandRunner_new_map1_and_bpref1.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/commandgenerator1_batch.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/topic_distribution_real_cost.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/topic_distribution_real_cost_command_line.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/newscript3/activeCode.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/newscript3/activeCode1.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/newscript3/activeJob15" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/newscript3/activeJob30" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/newscript3/activeJob45" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/newscript3/activeJob60" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/newscript3/activeJob75" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/newscript3/activeJob82" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/newscript3/activeJobTREC815" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/newscript3/activeJobTREC8Batch251" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/newscript3/activeJobTREC8Batch2510" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/newscript3/activeJobTREC8Batch2511" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/newscript3/activeJobTREC8Batch2512" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/newscript3/activeJobTREC8Batch2513" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/newscript3/activeJobTREC8Batch2514" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/newscript3/activeJobTREC8Batch2515" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/newscript3/activeJobTREC8Batch2516" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/newscript3/activeJobTREC8Batch2517" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/newscript3/activeJobTREC8Batch2518" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/newscript3/activeJobTREC8Batch2519" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/newscript3/activeJobTREC8Batch252" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/newscript3/activeJobTREC8Batch2520" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/newscript3/activeJobTREC8Batch2521" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/newscript3/activeJobTREC8Batch2522" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/newscript3/activeJobTREC8Batch2523" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/newscript3/activeJobTREC8Batch2524" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/newscript3/activeJobTREC8Batch253" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/newscript3/activeJobTREC8Batch254" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/newscript3/activeJobTREC8Batch255" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/newscript3/activeJobTREC8Batch256" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/newscript3/activeJobTREC8Batch257" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/newscript3/activeJobTREC8Batch258" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/newscript3/activeJobTREC8Batch259" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob10" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob100" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob101" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob102" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob103" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob104" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob105" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob106" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob107" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob108" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob11" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob12" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob13" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob14" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob15" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob16" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob18" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob19" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob20" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob21" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob22" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob23" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob24" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob25" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob26" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob27" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob28" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob29" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob30" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob31" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob32" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob33" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob34" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob35" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob36" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob37" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob38" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob39" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob40" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob41" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob42" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob43" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob44" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob45" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob46" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob47" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob48" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob49" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob50" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob51" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob52" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob53" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob54" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob55" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob56" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob57" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob58" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob59" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob6" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob60" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob61" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob62" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob63" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob64" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob65" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob66" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob67" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob68" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob69" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob7" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob70" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob71" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob72" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob73" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob74" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob75" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob76" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob77" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob78" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob79" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob8" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob80" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob81" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob82" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob83" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob84" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob85" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob86" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob87" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob88" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob89" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob9" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob90" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob91" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob92" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob93" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob94" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob95" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob96" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob97" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob98" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/script/activeJob99" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/batch_command.sh" afterPath="$PROJECT_DIR$/batch_command.sh" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/boxplots.py" afterPath="$PROJECT_DIR$/boxplots.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/commandgenerator3.py" afterPath="$PROJECT_DIR$/commandgenerator3.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/complete_f-1collector.py" afterPath="$PROJECT_DIR$/data/complete_f-1collector.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/complete_f-1collector_with_no_oversample.py" afterPath="$PROJECT_DIR$/complete_f-1collector_with_no_oversample.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/commandgenerator1.py" afterPath="$PROJECT_DIR$/data/commandgenerator1.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/vary_final_f-1collector.py" afterPath="$PROJECT_DIR$/data/vary_final_f-1collector.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/finite_pool_correction_no_ranker_percentage_bucket.py" afterPath="$PROJECT_DIR$/finite_pool_correction_no_ranker_percentage_bucket.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shellCommandRunner_bpref1.py" afterPath="$PROJECT_DIR$/shellCommandRunner_bpref1.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shellCommandRunner_new_map1.py" afterPath="$PROJECT_DIR$/shellCommandRunner_new_map1.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/finite_pool_correction_new_ranker_percentage.py" afterPath="$PROJECT_DIR$/finite_pool_correction_new_ranker_percentage.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/newscript2/batch_command.sh" afterPath="$PROJECT_DIR$/newscript2/batch_command.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/newscript3/batch_command.sh" afterPath="$PROJECT_DIR$/newscript3/batch_command.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shellCommandRunner_new_map1_and_bpref1.py" afterPath="$PROJECT_DIR$/shellCommandRunner_new_map1_and_bpref1.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vary_final_f-1collector_one_row.py" afterPath="$PROJECT_DIR$/vary_final_f-1collector_one_row.py" />
     </list>
     <ignored path="parser.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -51,94 +195,65 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="complete_f-1collector_no_oversample.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/complete_f-1collector_no_oversample.py">
+      <file leaf-file-name="topic_distribution_real_cost.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/topic_distribution_real_cost.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="73" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="complete_f-1collector.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/complete_f-1collector.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="complete_f-1collector_with_no_oversample.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/complete_f-1collector_with_no_oversample.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="39" column="56" lean-forward="false" selection-start-line="39" selection-start-column="41" selection-end-line="39" selection-end-column="56" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="shellCommandRunner_new_map1_and_bpref1.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/shellCommandRunner_new_map1_and_bpref1.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="709">
-              <caret line="200" column="51" lean-forward="false" selection-start-line="200" selection-start-column="51" selection-end-line="200" selection-end-column="51" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="vary_final_f-1collector.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/vary_final_f-1collector.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="14" column="33" lean-forward="false" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="vary_final_f-1collector_one_row.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/vary_final_f-1collector_one_row.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="532">
-              <caret line="128" column="43" lean-forward="false" selection-start-line="128" selection-start-column="43" selection-end-line="128" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="shellCommandRunner_new_map1.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/shellCommandRunner_new_map1.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="16" column="32" lean-forward="false" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="shellCommandRunner_bpref1.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/shellCommandRunner_bpref1.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="16" column="33" lean-forward="false" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="finite_pool_correction_new_ranker_percentage.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/finite_pool_correction_new_ranker_percentage.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="990">
-              <caret line="93" column="70" lean-forward="false" selection-start-line="93" selection-start-column="70" selection-end-line="93" selection-end-column="70" />
+            <state relative-caret-position="150">
+              <caret line="118" column="19" lean-forward="false" selection-start-line="118" selection-start-column="19" selection-end-line="118" selection-end-column="19" />
               <folding>
-                <element signature="e#26857#37507#0" expanded="false" />
+                <element signature="e#126#135#0" expanded="true" />
+                <element signature="e#30052#41942#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="topic_distribution_real_cost_command_line.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/topic_distribution_real_cost_command_line.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1411">
+              <caret line="126" column="19" lean-forward="false" selection-start-line="126" selection-start-column="19" selection-end-line="126" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="commandgenerator.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/commandgenerator.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="21" column="12" lean-forward="false" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="commandgenerator1.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/commandgenerator1.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="20" column="159" lean-forward="false" selection-start-line="20" selection-start-column="159" selection-end-line="20" selection-end-column="159" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="commandgenerator1_batch.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/data/commandgenerator1_batch.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="750">
+              <caret line="50" column="51" lean-forward="false" selection-start-line="50" selection-start-column="51" selection-end-line="50" selection-end-column="51" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="commandgenerator2.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/commandgenerator2.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="690">
+              <caret line="46" column="32" lean-forward="false" selection-start-line="46" selection-start-column="32" selection-end-line="46" selection-end-column="32" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -154,22 +269,12 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>gov2 30 25 CAL</find>
-      <find>Logis</find>
-      <find>SVM</find>
-      <find>test_index_list</find>
-      <find>docNo_do</find>
-      <find>if train_per_centage_flag == 'True'</find>
-      <find>train_per_centage_flag == True</find>
-      <find>'True'</find>
       <find>'False'</find>
       <find>True</find>
       <find>protocol_list</find>
-      <find>learning_curve</find>
       <find>gs</find>
       <find>prediction</find>
       <find>predicted_location_base</find>
-      <find>loopCounter</find>
       <find>human_label_location_final</find>
       <find>human_label_location</find>
       <find>human_lable_str</find>
@@ -177,6 +282,23 @@
       <find>map.txt</find>
       <find>0.9</find>
       <find>sampling</find>
+      <find>test_size</find>
+      <find>preloaded</find>
+      <find>use_ranker</find>
+      <find>size_limit</find>
+      <find>numberofloop</find>
+      <find>seed_size_limit</find>
+      <find>loopCounter</find>
+      <find>learning</find>
+      <find>401</find>
+      <find>alpha</find>
+      <find>budget_limit</find>
+      <find>learning_curve</find>
+      <find>learning_curve_location</find>
+      <find>end_topic -</find>
+      <find>total_jud</find>
+      <find>total_judged</find>
+      <find>item</find>
     </findStrings>
     <replaceStrings>
       <replace>train_per_centage_flag == 'True'</replace>
@@ -188,17 +310,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/data/predictionChecker.py" />
-        <option value="$PROJECT_DIR$/activeCode.py" />
-        <option value="$PROJECT_DIR$/activeCode1.py" />
-        <option value="$PROJECT_DIR$/data/commandgenerator2.py" />
-        <option value="$PROJECT_DIR$/data/resultChekcer.py" />
-        <option value="$PROJECT_DIR$/data/commandgenerator1.py" />
-        <option value="$PROJECT_DIR$/BasicLRIndriTREC8_ownal.py" />
-        <option value="$PROJECT_DIR$/data/f-1collector.py" />
-        <option value="$PROJECT_DIR$/urlCollector.py" />
-        <option value="$PROJECT_DIR$/fileUnzipper.py" />
-        <option value="$PROJECT_DIR$/SystemRankingModifier.py" />
         <option value="$PROJECT_DIR$/shellCommandRunner.py" />
         <option value="$PROJECT_DIR$/Corrected_BasicLRIndriTREC8_ownal.py" />
         <option value="$PROJECT_DIR$/Corrected_Basic_SVM_IndriTREC8_ownal_ver_1.py" />
@@ -227,18 +338,29 @@
         <option value="$PROJECT_DIR$/finite_pool_correction_no_ranker_percentage_bucket.py" />
         <option value="$PROJECT_DIR$/shellCommandRunner_new_map1.py" />
         <option value="$PROJECT_DIR$/shellCommandRunner_bpref1.py" />
-        <option value="$PROJECT_DIR$/data/vary_final_f-1collector.py" />
-        <option value="$PROJECT_DIR$/boxplots.py" />
         <option value="$PROJECT_DIR$/shellCommandRunner_new_map_for_systems.py" />
         <option value="$PROJECT_DIR$/map_boxplot.py" />
         <option value="$PROJECT_DIR$/data/complete_f-1collector.py" />
         <option value="$PROJECT_DIR$/commandgenerator3.py" />
-        <option value="$PROJECT_DIR$/finite_pool_correction_new_ranker_percentage.py" />
         <option value="$PROJECT_DIR$/complete_f-1collector_remove.py" />
         <option value="$PROJECT_DIR$/complete_f-1collector_no_oversample.py" />
+        <option value="$PROJECT_DIR$/data/vary_final_f-1collector.py" />
         <option value="$PROJECT_DIR$/complete_f-1collector_with_no_oversample.py" />
-        <option value="$PROJECT_DIR$/shellCommandRunner_new_map1_and_bpref1.py" />
         <option value="$PROJECT_DIR$/vary_final_f-1collector_one_row.py" />
+        <option value="$PROJECT_DIR$/boxplots.py" />
+        <option value="$PROJECT_DIR$/shellCommandRunner_new_map1_and_bpref1.py" />
+        <option value="$PROJECT_DIR$/httpCollector.py" />
+        <option value="$PROJECT_DIR$/script/qrelsByTopic.py" />
+        <option value="$PROJECT_DIR$/script/mapByTopic.py" />
+        <option value="$PROJECT_DIR$/script/pearsonCorrelationTopicAnalysis.py" />
+        <option value="$PROJECT_DIR$/interview.py" />
+        <option value="$PROJECT_DIR$/finite_pool_correction_new_ranker_percentage.py" />
+        <option value="$PROJECT_DIR$/script/RankerAnalysis.py" />
+        <option value="$PROJECT_DIR$/topic_distribution_finite_pool_correction_new_ranker_percentage.py" />
+        <option value="$PROJECT_DIR$/topic_distribution_real_cost.py" />
+        <option value="$PROJECT_DIR$/topic_distribution_real_cost_command_line.py" />
+        <option value="$PROJECT_DIR$/data/commandgenerator1.py" />
+        <option value="$PROJECT_DIR$/data/commandgenerator1_batch.py" />
       </list>
     </option>
   </component>
@@ -269,7 +391,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -292,6 +413,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="script" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="parser" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="parser" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="data" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -299,6 +434,7 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -308,33 +444,33 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/data" />
+      <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/data" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.vary_final_f-1collector_one_row">
-    <configuration default="false" name="complete_f-1collector_no_oversample" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.commandgenerator1_batch">
+    <configuration default="false" name="RankerAnalysis" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/script" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="parser" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/complete_f-1collector_no_oversample.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/script/RankerAnalysis.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="complete_f-1collector_remove" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration default="false" name="topic_distribution_finite_pool_correction_new_ranker_percentage" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -347,12 +483,12 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="parser" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/complete_f-1collector_remove.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/topic_distribution_finite_pool_correction_new_ranker_percentage.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="complete_f-1collector_with_no_oversample" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration default="false" name="topic_distribution_real_cost" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -365,43 +501,43 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="parser" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/complete_f-1collector_with_no_oversample.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/topic_distribution_real_cost.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="shellCommandRunner_new_map1_and_bpref1" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration default="false" name="commandgenerator1" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="parser" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/shellCommandRunner_new_map1_and_bpref1.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/commandgenerator1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="vary_final_f-1collector_one_row" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration default="false" name="commandgenerator1_batch" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="parser" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/vary_final_f-1collector_one_row.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/commandgenerator1_batch.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -548,19 +684,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.complete_f-1collector_no_oversample" />
-      <item index="1" class="java.lang.String" itemvalue="Python.complete_f-1collector_remove" />
-      <item index="2" class="java.lang.String" itemvalue="Python.complete_f-1collector_with_no_oversample" />
-      <item index="3" class="java.lang.String" itemvalue="Python.shellCommandRunner_new_map1_and_bpref1" />
-      <item index="4" class="java.lang.String" itemvalue="Python.vary_final_f-1collector_one_row" />
+      <item index="0" class="java.lang.String" itemvalue="Python.RankerAnalysis" />
+      <item index="1" class="java.lang.String" itemvalue="Python.topic_distribution_finite_pool_correction_new_ranker_percentage" />
+      <item index="2" class="java.lang.String" itemvalue="Python.topic_distribution_real_cost" />
+      <item index="3" class="java.lang.String" itemvalue="Python.commandgenerator1" />
+      <item index="4" class="java.lang.String" itemvalue="Python.commandgenerator1_batch" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.vary_final_f-1collector_one_row" />
-        <item index="1" class="java.lang.String" itemvalue="Python.shellCommandRunner_new_map1_and_bpref1" />
-        <item index="2" class="java.lang.String" itemvalue="Python.complete_f-1collector_with_no_oversample" />
-        <item index="3" class="java.lang.String" itemvalue="Python.complete_f-1collector_no_oversample" />
-        <item index="4" class="java.lang.String" itemvalue="Python.complete_f-1collector_remove" />
+        <item index="0" class="java.lang.String" itemvalue="Python.commandgenerator1_batch" />
+        <item index="1" class="java.lang.String" itemvalue="Python.commandgenerator1" />
+        <item index="2" class="java.lang.String" itemvalue="Python.topic_distribution_real_cost" />
+        <item index="3" class="java.lang.String" itemvalue="Python.topic_distribution_finite_pool_correction_new_ranker_percentage" />
+        <item index="4" class="java.lang.String" itemvalue="Python.RankerAnalysis" />
       </list>
     </recent_temporary>
   </component>
@@ -579,14 +715,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1535" height="876" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27361563" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20260586" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32958803" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4332085" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42696628" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -658,105 +794,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/finite_pool_correction_no_ranker.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2067">
-          <caret line="87" column="19" lean-forward="true" selection-start-line="87" selection-start-column="19" selection-end-line="87" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/finite_pool_correction.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="784" column="8" lean-forward="false" selection-start-line="784" selection-start-column="8" selection-end-line="790" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/f-1collector.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="58" column="69" lean-forward="false" selection-start-line="58" selection-start-column="69" selection-end-line="58" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/resultChekcer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="30" lean-forward="false" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/predictionChecker.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-490">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/BasicLRIndriTREC8_new.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="32" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spluk_analysis.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3660">
-          <caret line="252" column="20" lean-forward="false" selection-start-line="252" selection-start-column="20" selection-end-line="252" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/activeCode1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="45" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kendallTau.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2475">
-          <caret line="171" column="223" lean-forward="false" selection-start-line="171" selection-start-column="223" selection-end-line="171" selection-end-column="223" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/matplotlib/pyplot.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20055">
-          <caret line="1386" column="0" lean-forward="false" selection-start-line="1386" selection-start-column="0" selection-end-line="1386" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/matplotlib/figure.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="1753" column="0" lean-forward="false" selection-start-line="1753" selection-start-column="0" selection-end-line="1753" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/finite_pool_correction_no_ranker_percentage_topic_bucket.py" />
-    <entry file="file://$PROJECT_DIR$/data/commandgenerator1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="18" selection-end-column="127" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/commandgenerator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="12" lean-forward="false" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/commandgenerator2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="46" column="32" lean-forward="false" selection-start-line="46" selection-start-column="32" selection-end-line="46" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/new_f-1collector.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
@@ -800,13 +838,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vary_complete_f-1collector.py" />
-    <entry file="file://$PROJECT_DIR$/pearson_Correlation_collector.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1320">
-          <caret line="93" column="13" lean-forward="false" selection-start-line="93" selection-start-column="13" selection-end-line="93" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/f_beta_collector.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-75">
@@ -836,24 +867,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/shellCommandRunner.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="38" lean-forward="false" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testttt.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/urlCollector.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="13" column="89" lean-forward="false" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="89" />
         </state>
       </provider>
     </entry>
@@ -868,13 +885,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
           <caret line="60" column="51" lean-forward="false" selection-start-line="60" selection-start-column="51" selection-end-line="60" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/boxplots.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="69" />
         </state>
       </provider>
     </entry>
@@ -928,16 +938,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/finite_pool_correction_new_ranker_percentage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="990">
-          <caret line="93" column="70" lean-forward="false" selection-start-line="93" selection-start-column="70" selection-end-line="93" selection-end-column="70" />
-          <folding>
-            <element signature="e#26857#37507#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/final_f-1collector.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1260">
@@ -946,18 +946,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/new_f-1collector_oversample.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="100" column="0" lean-forward="false" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/complete_f-1collector.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
           <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -965,7 +957,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="73" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -973,7 +964,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="16" column="33" lean-forward="false" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -981,38 +971,177 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="16" column="32" lean-forward="false" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/complete_f-1collector_with_no_oversample.py">
+    <entry file="file://$PROJECT_DIR$/data/new_f-1collector_oversample.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="39" column="56" lean-forward="false" selection-start-line="39" selection-start-column="41" selection-end-line="39" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shellCommandRunner_new_map1_and_bpref1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="709">
-          <caret line="200" column="51" lean-forward="false" selection-start-line="200" selection-start-column="51" selection-end-line="200" selection-end-column="51" />
-          <folding />
+        <state relative-caret-position="1470">
+          <caret line="100" column="0" lean-forward="false" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data/vary_final_f-1collector.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="14" column="33" lean-forward="false" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
-          <folding />
+        <state relative-caret-position="1995">
+          <caret line="136" column="22" lean-forward="false" selection-start-line="128" selection-start-column="12" selection-end-line="136" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/complete_f-1collector_with_no_oversample.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1965">
+          <caret line="135" column="43" lean-forward="false" selection-start-line="135" selection-start-column="43" selection-end-line="135" selection-end-column="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vary_final_f-1collector_one_row.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="128" column="43" lean-forward="false" selection-start-line="128" selection-start-column="43" selection-end-line="128" selection-end-column="43" />
+        <state relative-caret-position="1800">
+          <caret line="123" column="39" lean-forward="false" selection-start-line="123" selection-start-column="39" selection-end-line="123" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shellCommandRunner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="38" lean-forward="false" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shellCommandRunner_new_map1_and_bpref1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="22" column="21" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="229" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/boxplots.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1485">
+          <caret line="100" column="45" lean-forward="false" selection-start-line="100" selection-start-column="45" selection-end-line="100" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/mapByTopic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="16" column="32" lean-forward="false" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interview.py" />
+    <entry file="file://$PROJECT_DIR$/finite_pool_correction_new_ranker_percentage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2315">
+          <caret line="468" column="32" lean-forward="true" selection-start-line="468" selection-start-column="32" selection-end-line="468" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/RankerAnalysis.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1755">
+          <caret line="144" column="56" lean-forward="false" selection-start-line="144" selection-start-column="31" selection-end-line="144" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/pearsonCorrelationTopicAnalysis.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="4" column="20" lean-forward="false" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pearson_Correlation_collector.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/qrelsByTopic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="58" column="20" lean-forward="false" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/urlCollector.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="46" column="26" lean-forward="false" selection-start-line="46" selection-start-column="26" selection-end-line="46" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/httpCollector.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/posixpath.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1605">
+          <caret line="113" column="0" lean-forward="false" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/commandgenerator2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="46" column="32" lean-forward="false" selection-start-line="46" selection-start-column="32" selection-end-line="46" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/commandgenerator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="12" lean-forward="false" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/topic_distribution_finite_pool_correction_new_ranker_percentage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2790">
+          <caret line="325" column="24" lean-forward="true" selection-start-line="325" selection-start-column="24" selection-end-line="325" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/topic_distribution_real_cost.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="118" column="19" lean-forward="false" selection-start-line="118" selection-start-column="19" selection-end-line="118" selection-end-column="19" />
+          <folding>
+            <element signature="e#126#135#0" expanded="true" />
+            <element signature="e#30052#41942#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/topic_distribution_real_cost_command_line.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1411">
+          <caret line="126" column="19" lean-forward="false" selection-start-line="126" selection-start-column="19" selection-end-line="126" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/commandgenerator1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="20" column="159" lean-forward="false" selection-start-line="20" selection-start-column="159" selection-end-line="20" selection-end-column="159" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/commandgenerator1_batch.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="750">
+          <caret line="50" column="51" lean-forward="false" selection-start-line="50" selection-start-column="51" selection-end-line="50" selection-end-column="51" />
           <folding />
         </state>
       </provider>

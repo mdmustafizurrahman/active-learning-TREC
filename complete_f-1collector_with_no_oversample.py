@@ -54,16 +54,16 @@ for use_ranker in ranker_list:
             base_address2 = base_address1 + str(datasource) + "/"
             if use_ranker == 'True':
                 base_address3 = base_address2 + "ranker/"
-                s1="Ranker and "
+                s1="RDS "
             else:
                 base_address3 = base_address2 + "no_ranker/"
-                s1 = "Interactive Search and "
+                s1 = "IS "
             if iter_sampling == 'True':
                 base_address4 = base_address3 + "oversample/"
-                s1 = s1+"oversampling"
+                s1 = s1+"with Oversampling"
             else:
                 base_address4 = base_address3 + "oversample/"
-                s1 = s1+"no oversample"
+                s1 = s1+"w/o Oversampling"
 
             training_variation = []
             for seed in seed_size: # 2
@@ -127,15 +127,16 @@ for use_ranker in ranker_list:
             #exit(0)
 
 
-            plt.plot(x_labels_set, protocol_result['SAL'],  '-r', marker='o',  label='SAL, AUC:'+str(auc_SAL)[:4], linewidth=2.0)
-            plt.plot(x_labels_set, protocol_result['CAL'],  '-b', marker = '^', label='CAL, AUC:'+str(auc_CAL)[:4], linewidth=2.0)
-            plt.plot(x_labels_set, protocol_result['SPL'],  '-g', marker = 's',  label='SPL, AUC:'+str(auc_SPL)[:4], linewidth=2.0)
+            plt.plot(x_labels_set, protocol_result['CAL'], '-b', marker='^', label='CAL, AUC:' + str(auc_CAL)[:4],linewidth=2.0)
 
-            if var > 6:
-                plt.xlabel('Percentage of human judgements', size = 16)
+            plt.plot(x_labels_set, protocol_result['SAL'],  '-r', marker='o',  label='SAL, AUC:'+str(auc_SAL)[:4], linewidth=2.0)
+            plt.plot(x_labels_set, protocol_result['SPL'],  '-g', marker = 'D', label='SPL, AUC:'+str(auc_SPL)[:4], linewidth=2.0)
+
+            if var > 8:
+                plt.xlabel('% of human judgments', size = 16)
 
             if var == 1 or var == 5 or var == 9 or var == 13:
-                plt.ylabel(s1+'\n F1 measure', size = 16)
+                plt.ylabel(s1+'\n F1', size = 16)
                 #plt.yticks(True)
             plt.ylim([0.5,1])
             #plt.tick_params(axis='x',          # changes apply to the x-axis
@@ -148,7 +149,14 @@ for use_ranker in ranker_list:
             #    plt.legend(loc=2, fontsize = 16)
             #else:
             plt.legend(loc=4, fontsize=16)
-            plt.title(datasource, size= 16)
+            if datasource == 'gov2':
+                plt.title('TB\'06', size= 16)
+            elif datasource == 'WT2013':
+                plt.title('WT\'13', size = 16)
+            elif datasource == 'WT2014':
+                plt.title('WT\'14', size=16)
+            else:
+                plt.title('Adhoc\'99', size=16)
             plt.grid()
             var = var + 1
 
@@ -156,6 +164,6 @@ for use_ranker in ranker_list:
 plt.tight_layout()
 
 #plt.show()
-plt.savefig(plotAddress+s1+'new_.pdf', format='pdf')
+plt.savefig(plotAddress+'new_.pdf', format='pdf')
 
     #exit(0)

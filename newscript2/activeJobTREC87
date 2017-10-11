@@ -1,0 +1,12 @@
+#!/bin/bash
+#SBATCH -J topic_distribution_real_cost_command_line7# job name
+#SBATCH -o topic_distribution_real_cost_command_line7.o%j       # output and error file name (%j expands to jobID)
+#SBATCH -n 2              # total number of mpi tasks requested
+#SBATCH -p gpu     # queue (partition) -- normal, development, etc.
+#SBATCH -t 11:59:59        # run time (hh:mm:ss) - 1.0 hours
+#SBATCH --mail-user=nahidcse05@gmail.com
+#SBATCH --mail-type=begin  # email me when the job starts
+#SBATCH --mail-type=end    # email me when the job finishes
+
+module load python
+python topic_distribution_real_cost_command_line.py TREC8 SAL 0.75 1

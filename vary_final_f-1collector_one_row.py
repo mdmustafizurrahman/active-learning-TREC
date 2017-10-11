@@ -121,13 +121,20 @@ for use_ranker in ranker_list:
                 plt.plot(x_labels_set, protocol_result[2], marker='^', label='11% to 20%, AUC:'+str(auc_2)[:4], linewidth=2.0)
                 plt.plot(x_labels_set, protocol_result[3], marker='s', label='21% to 30%, AUC:'+str(auc_3)[:4], linewidth=2.0)
 
-            plt.xlabel('Percentage of human judgements', size = 16)
+            plt.xlabel('% of human judgments', size = 16)
 
             if var == 1:
-                plt.ylabel('F-1 measure', size = 16)
+                plt.ylabel('F1', size = 16)
             plt.ylim([0.5,1])
             plt.legend(loc=4, fontsize = 16)
-            plt.title(datasource, size= 16)
+            if datasource == 'gov2':
+                plt.title('TB\'06', size=16)
+            elif datasource == 'WT2013':
+                plt.title('WT\'13', size=16)
+            elif datasource == 'WT2014':
+                plt.title('WT\'14', size=16)
+            else:
+                plt.title('Adhoc\'99', size=16)
             plt.grid()
             var = var + 1
         #plt.suptitle(s1, size=16)

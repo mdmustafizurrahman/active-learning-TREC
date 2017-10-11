@@ -46,18 +46,56 @@ for i in xrange(0, len(WT2014)):
 print prevalenceWT2014
 
 
-#exit(0)
+
 
 data = [prevalenceWT2014, prevalenceWT2013, prevalencegov2, prevalenceTREC8]
 plt.boxplot( data)
-plt.xticks([1, 2, 3, 4], ['WT2014', 'WT2013', 'gov2', 'TREC8'])
+
 plt.grid()
-plt.xlabel("Data set",size = 16)
-plt.ylabel("Percentage of relevant documents per topic", size = 16)
+plt.xlabel("TREC Track",size = 16)
+plt.ylabel("% of relevant documents per topic", size = 16)
 plt.ylim(0,100)
 plt.yticks([0,10,20,30,40,50,60,70,80,90,100])
 #plt.show()
 
 plt.tight_layout()
 # plt.show()
-plt.savefig(plotAddress +'perTopicPrevalence.pdf', format='pdf')
+## add patch_artist=True option to ax.boxplot()
+## to get fill color
+#exit(0)
+'''
+# Create a figure instance
+fig = plt.figure(1, figsize=(9, 6))
+
+# Create an axes instance
+ax = fig.add_subplot(111)
+
+# Create the boxplot
+bp = ax.boxplot(data)
+bp = ax.boxplot(data, patch_artist=True)
+
+## change outline color, fill color and linewidth of the boxes
+for box in bp['boxes']:
+    # change outline color
+    box.set( color='#7570b3', linewidth=2)
+    # change fill color
+    box.set( facecolor = '#1b9e77' )
+
+## change color and linewidth of the whiskers
+for whisker in bp['whiskers']:
+    whisker.set(color='#7570b3', linewidth=2)
+
+## change color and linewidth of the caps
+for cap in bp['caps']:
+    cap.set(color='#7570b3', linewidth=2)
+
+## change color and linewidth of the medians
+for median in bp['medians']:
+    median.set(color='r', linewidth=2)
+
+## change the style of fliers and their fill
+for flier in bp['fliers']:
+    flier.set(marker='o', color='#e7298a', alpha=0.5)
+'''
+plt.xticks([1, 2, 3, 4], ['WT\'14', 'WT\'13', 'TB\'06', 'Adhoc\'99'])
+plt.savefig(plotAddress +'perTopicPrevalence1.pdf', format='pdf')
