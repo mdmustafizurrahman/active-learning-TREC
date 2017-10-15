@@ -1,9 +1,10 @@
 
 #topicSkipList = [202,225,255, 278, 805]
 #topicSkipList = [202,210,225,234,235,238,244,251,255,262,269,271,278,283,289,291,803,805]
-topicSkipList = [202,225,255, 278, 805]
+#topicSkipList = [202,225,255, 278, 805]
+topicSkipList = [202,209,225, 237, 245, 255,269, 278, 803, 805]
 #topicSkipList = []
-datasource = 'WT2014' # can be  dataset = ['TREC8', 'gov2', 'WT']
+datasource = 'gov2' # can be  dataset = ['TREC8', 'gov2', 'WT']
 if datasource=='TREC8':
     processed_file_location = '/home/nahid/UT_research/TREC/TREC8/processed.txt'
     RELEVANCE_DATA_DIR = '/home/nahid/UT_research/TREC/TREC8/relevance.txt'
@@ -18,14 +19,14 @@ elif datasource=='gov2':
     end_topic = 851
 elif datasource=='WT2013':
     processed_file_location = '/home/nahid/UT_research/clueweb12/pythonprocessed/processed_new.txt'
-    RELEVANCE_DATA_DIR = '/home/nahid/UT_research/clueweb12/qrels/qrelsadhoc2013.txt'
+    RELEVANCE_DATA_DIR = '/media/nahid/Windows8_OS/clueweb12/qrels/qrelsadhoc2013.txt'
     realFile = '/media/nahid/Windows8_OS/finalDownlaod/TREC/WT2013/realnumberofdocs2013.txt'
     destinationAddress = '/media/nahid/Windows8_OS/finalDownlaod/TREC/WT2013/modified_qreldocs2013.txt'
     start_topic = 201
     end_topic = 251
 else:
     processed_file_location = '/home/nahid/UT_research/clueweb12/pythonprocessed/processed_new.txt'
-    RELEVANCE_DATA_DIR = '/home/nahid/UT_research/clueweb12/qrels/qrelsadhoc2014.txt'
+    RELEVANCE_DATA_DIR = '/media/nahid/Windows8_OS/clueweb12/qrels/qrelsadhoc2014.txt'
     realFile = '/media/nahid/Windows8_OS/finalDownlaod/TREC/WT2014/realnumberofdocs2014.txt'
     destinationAddress = '/media/nahid/Windows8_OS/finalDownlaod/TREC/WT2014/modified_qreldocs2014.txt'
     start_topic = 251

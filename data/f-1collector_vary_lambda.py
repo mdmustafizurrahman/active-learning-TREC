@@ -176,7 +176,7 @@ for alpha_param in alpha_list:
             plt.grid()
             var = var + 1
 
-    plt.suptitle("alpha = "+str(alpha_param), size=20)
+    #plt.suptitle("alpha = "+str(alpha_param), size=20)
     plt.tight_layout()
 
     #plt.show()
