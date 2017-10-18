@@ -17,16 +17,19 @@ plotAddress =  "/media/nahid/Windows8_OS/TREC/plots/"
 
 
 protocol_list = ['SAL','CAL', 'SPL']
-#dataset_list = ['gov2', 'TREC8']
-dataset_list = ['WT2014','WT2013', 'gov2', 'TREC8']
+#dataset_list = ['gov2']
+#map_list = ['map']
+#map_list = ['bpref']
+
+dataset_list = ['WT2014', 'WT2013','gov2','TREC8']
 ranker_list = ['True']
 sampling_list = ['True']
 map_list = ['map', 'bpref']
-#map_list = ['bpref']
 train_per_centage_flag = 'True'
 seed_size =  [10] #50      # number of samples that are initially labeled
 batch_size = [25] #50
-train_per_centage = [0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1] # skiping seed part which is named as 0.1
+train_per_centage = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0] # skiping seed part which is named as 0.1
+#train_per_centage = [0.1]
 #train_per_centage = [0.2, 0.3] # skiping seed part which is named as 0.1
 x_labels_set_name = ['0%','10%','20%','30%','40%','50%','60%','70%','80%','90%','100%']
 #x_labels_set =[0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
@@ -93,6 +96,9 @@ for stringUse in map_list:
                     destinationBase = "/media/nahid/Windows8_OS/modifiedSystemRanking/" + datasource + "/"
                     predictionAddress = "/media/nahid/Windows8_OS/finalDownlaod/TREC/WT2014/prediction/"
                     predictionModifiedAddress = "/media/nahid/Windows8_OS/finalDownlaod/TREC/WT2014/modifiedprediction/"
+                    train_per_centage = [0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9,
+                                         1.0, 1.1]  # skiping seed part which is named as 0.1
+
                     alpha_param = 2
 
                 print "Original Part"
@@ -226,7 +232,11 @@ for stringUse in map_list:
                                     text_file = open(predictionMapResult, "w")
                                     text_file.write(tmp)
                                     text_file.close()
+
+
+                                    #####################
                                     '''
+
                                     predictedqrelMap = []
 
                                     predictionMapResult = predicted_location_base + str(percentage) + '_'+ stringUse+'.txt'

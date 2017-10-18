@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b0535bd4-8300-4b90-97dc-682304dbc22d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/map_and_bpref_vary_lambda.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/topic_distribution_real_cost_detereministic.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/f-1collector_vary_lambda.py" afterPath="$PROJECT_DIR$/data/f-1collector_vary_lambda.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/qRelModifier.py" afterPath="$PROJECT_DIR$/qRelModifier.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/map_and_bpref_vary_lambda.py" afterPath="$PROJECT_DIR$/data/map_and_bpref_vary_lambda.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/topic_distribution_real_cost_command_line.py" afterPath="$PROJECT_DIR$/topic_distribution_real_cost_command_line.py" />
     </list>
     <ignored path="parser.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,8 +48,8 @@
       <file leaf-file-name="topic_distribution_real_cost.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/topic_distribution_real_cost.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="122" column="76" lean-forward="true" selection-start-line="122" selection-start-column="4" selection-end-line="122" selection-end-column="76" />
+            <state relative-caret-position="1620">
+              <caret line="122" column="76" lean-forward="false" selection-start-line="122" selection-start-column="4" selection-end-line="122" selection-end-column="76" />
               <folding>
                 <element signature="e#30052#41942#0" expanded="false" />
               </folding>
@@ -60,8 +60,31 @@
       <file leaf-file-name="best_parameter_per_dataset.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data/best_parameter_per_dataset.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="70" column="90" lean-forward="true" selection-start-line="70" selection-start-column="12" selection-end-line="70" selection-end-column="90" />
+            <state relative-caret-position="15">
+              <caret line="70" column="90" lean-forward="false" selection-start-line="70" selection-start-column="12" selection-end-line="70" selection-end-column="90" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="topic_distribution_real_cost_detereministic.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/topic_distribution_real_cost_detereministic.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="60" column="0" lean-forward="true" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+              <folding>
+                <element signature="e#126#135#0" expanded="true" />
+                <element signature="e#31492#43382#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="topic_distribution_real_cost_command_line.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/topic_distribution_real_cost_command_line.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3357">
+              <caret line="1317" column="20" lean-forward="false" selection-start-line="1317" selection-start-column="20" selection-end-line="1317" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -70,18 +93,18 @@
       <file leaf-file-name="f-1collector_vary_lambda.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data/f-1collector_vary_lambda.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-855">
-              <caret line="10" column="53" lean-forward="true" selection-start-line="10" selection-start-column="53" selection-end-line="10" selection-end-column="53" />
+            <state relative-caret-position="90">
+              <caret line="10" column="53" lean-forward="false" selection-start-line="10" selection-start-column="53" selection-end-line="10" selection-end-column="53" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="map_and_bpref_vary_lambda.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="map_and_bpref_vary_lambda.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data/map_and_bpref_vary_lambda.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="19" column="1" lean-forward="false" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+            <state relative-caret-position="285">
+              <caret line="23" column="29" lean-forward="false" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -110,8 +133,8 @@
       <file leaf-file-name="complete_f-1collector_with_no_oversample.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data/complete_f-1collector_with_no_oversample.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="741">
-              <caret line="168" column="12" lean-forward="true" selection-start-line="52" selection-start-column="8" selection-end-line="168" selection-end-column="12" />
+            <state relative-caret-position="2460">
+              <caret line="168" column="12" lean-forward="false" selection-start-line="52" selection-start-column="8" selection-end-line="168" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -128,8 +151,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>predicted_location_base</find>
-      <find>human_label_location_final</find>
       <find>human_label_location</find>
       <find>human_lable_str</find>
       <find>human_label_str</find>
@@ -158,6 +179,8 @@
       <find>predictionAddress</find>
       <find>predictionModifiedAddress</find>
       <find>stringUse</find>
+      <find>topic_complete_list[topicIndexNumber] = 1</find>
+      <find>sample_topic_list</find>
     </findStrings>
     <replaceStrings>
       <replace>train_per_centage_flag == 'True'</replace>
@@ -169,7 +192,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Corrected_BasicLRIndriTREC8_ownal_ver_1.py" />
         <option value="$PROJECT_DIR$/Corrected_BasicLRIndriTREC8_ownal_with_validation.py" />
         <option value="$PROJECT_DIR$/finite_pool.py" />
         <option value="$PROJECT_DIR$/finite_pool_correction.py" />
@@ -212,7 +234,6 @@
         <option value="$PROJECT_DIR$/script/RankerAnalysis.py" />
         <option value="$PROJECT_DIR$/topic_distribution_finite_pool_correction_new_ranker_percentage.py" />
         <option value="$PROJECT_DIR$/topic_distribution_real_cost.py" />
-        <option value="$PROJECT_DIR$/topic_distribution_real_cost_command_line.py" />
         <option value="$PROJECT_DIR$/data/commandgenerator1.py" />
         <option value="$PROJECT_DIR$/data/commandgenerator1_batch.py" />
         <option value="$PROJECT_DIR$/data/best_parameter_per_dataset.py" />
@@ -220,6 +241,8 @@
         <option value="$PROJECT_DIR$/shellCommandRunner_new_map1_and_bpref1.py" />
         <option value="$PROJECT_DIR$/qRelModifier.py" />
         <option value="$PROJECT_DIR$/data/map_and_bpref_vary_lambda.py" />
+        <option value="$PROJECT_DIR$/topic_distribution_real_cost_command_line.py" />
+        <option value="$PROJECT_DIR$/topic_distribution_real_cost_detereministic.py" />
       </list>
     </option>
   </component>
@@ -250,8 +273,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -302,33 +325,15 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/data" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/data" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/data" />
-      <recent name="$PROJECT_DIR$" />
-    </key>
   </component>
-  <component name="RunManager" selected="Python.map_and_bpref_vary_lambda">
-    <configuration default="false" name="commandgenerator1_batch" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="parser" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/commandgenerator1_batch_lambda.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python.topic_distribution_real_cost_detereministic">
     <configuration default="false" name="f-1collector_vary_lambda" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -397,6 +402,24 @@
       <module name="parser" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/qRelModifier.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="topic_distribution_real_cost_detereministic" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="parser" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/topic_distribution_real_cost_detereministic.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -543,19 +566,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.commandgenerator1_batch" />
-      <item index="1" class="java.lang.String" itemvalue="Python.f-1collector_vary_lambda" />
-      <item index="2" class="java.lang.String" itemvalue="Python.best_parameter_per_dataset" />
-      <item index="3" class="java.lang.String" itemvalue="Python.map_and_bpref_vary_lambda" />
-      <item index="4" class="java.lang.String" itemvalue="Python.qRelModifier" />
+      <item index="0" class="java.lang.String" itemvalue="Python.f-1collector_vary_lambda" />
+      <item index="1" class="java.lang.String" itemvalue="Python.best_parameter_per_dataset" />
+      <item index="2" class="java.lang.String" itemvalue="Python.map_and_bpref_vary_lambda" />
+      <item index="3" class="java.lang.String" itemvalue="Python.qRelModifier" />
+      <item index="4" class="java.lang.String" itemvalue="Python.topic_distribution_real_cost_detereministic" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.map_and_bpref_vary_lambda" />
-        <item index="1" class="java.lang.String" itemvalue="Python.qRelModifier" />
-        <item index="2" class="java.lang.String" itemvalue="Python.best_parameter_per_dataset" />
-        <item index="3" class="java.lang.String" itemvalue="Python.f-1collector_vary_lambda" />
-        <item index="4" class="java.lang.String" itemvalue="Python.commandgenerator1_batch" />
+        <item index="0" class="java.lang.String" itemvalue="Python.topic_distribution_real_cost_detereministic" />
+        <item index="1" class="java.lang.String" itemvalue="Python.best_parameter_per_dataset" />
+        <item index="2" class="java.lang.String" itemvalue="Python.map_and_bpref_vary_lambda" />
+        <item index="3" class="java.lang.String" itemvalue="Python.qRelModifier" />
+        <item index="4" class="java.lang.String" itemvalue="Python.f-1collector_vary_lambda" />
       </list>
     </recent_temporary>
   </component>
@@ -581,7 +604,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32958803" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42696628" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42696628" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -653,13 +676,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/sgml.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="33" lean-forward="false" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testttt.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -771,7 +787,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="21" column="12" lean-forward="false" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -782,19 +797,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/topic_distribution_real_cost_command_line.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1680">
-          <caret line="126" column="19" lean-forward="false" selection-start-line="126" selection-start-column="19" selection-end-line="126" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/commandgenerator1.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
           <caret line="34" column="45" lean-forward="false" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -802,7 +808,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="690">
           <caret line="46" column="32" lean-forward="false" selection-start-line="46" selection-start-column="32" selection-end-line="46" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -810,7 +815,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1628">
           <caret line="2" column="38" lean-forward="false" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -818,7 +822,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -826,7 +829,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-985">
           <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -834,9 +836,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#9#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -852,7 +851,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1365">
           <caret line="93" column="33" lean-forward="true" selection-start-line="93" selection-start-column="33" selection-end-line="93" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -860,7 +858,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="950">
           <caret line="67" column="9" lean-forward="true" selection-start-line="67" selection-start-column="9" selection-end-line="67" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -868,7 +865,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-324">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -876,7 +872,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -884,7 +879,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1710">
           <caret line="117" column="17" lean-forward="true" selection-start-line="117" selection-start-column="17" selection-end-line="117" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -892,7 +886,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="16" column="32" lean-forward="false" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -900,7 +893,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="465">
           <caret line="58" column="20" lean-forward="false" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -908,7 +900,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="741">
           <caret line="144" column="56" lean-forward="false" selection-start-line="144" selection-start-column="31" selection-end-line="144" selection-end-column="56" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -916,7 +907,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1575">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -924,7 +914,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="667">
           <caret line="100" column="45" lean-forward="false" selection-start-line="100" selection-start-column="45" selection-end-line="100" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -932,7 +921,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="28" column="69" lean-forward="false" selection-start-line="28" selection-start-column="69" selection-end-line="28" selection-end-column="69" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -940,7 +928,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -948,7 +935,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1089">
           <caret line="39" column="51" lean-forward="false" selection-start-line="39" selection-start-column="51" selection-end-line="39" selection-end-column="51" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -956,14 +942,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1299">
           <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="73" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data/complete_f-1collector_with_no_oversample.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="741">
-          <caret line="168" column="12" lean-forward="true" selection-start-line="52" selection-start-column="8" selection-end-line="168" selection-end-column="12" />
+        <state relative-caret-position="2460">
+          <caret line="168" column="12" lean-forward="false" selection-start-line="52" selection-start-column="8" selection-end-line="168" selection-end-column="12" />
           <folding />
         </state>
       </provider>
@@ -980,7 +965,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="325">
           <caret line="144" column="12" lean-forward="true" selection-start-line="144" selection-start-column="12" selection-end-line="144" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -988,15 +972,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="444">
           <caret line="113" column="73" lean-forward="false" selection-start-line="113" selection-start-column="73" selection-end-line="113" selection-end-column="73" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/best_parameter_per_dataset.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="70" column="90" lean-forward="true" selection-start-line="70" selection-start-column="12" selection-end-line="70" selection-end-column="90" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1004,22 +979,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="17" column="21" lean-forward="false" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data/f-1collector_vary_lambda.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-855">
-          <caret line="10" column="53" lean-forward="true" selection-start-line="10" selection-start-column="53" selection-end-line="10" selection-end-column="53" />
+        <state relative-caret-position="90">
+          <caret line="10" column="53" lean-forward="false" selection-start-line="10" selection-start-column="53" selection-end-line="10" selection-end-column="53" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/topic_distribution_real_cost.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="122" column="76" lean-forward="true" selection-start-line="122" selection-start-column="4" selection-end-line="122" selection-end-column="76" />
+        <state relative-caret-position="1620">
+          <caret line="122" column="76" lean-forward="false" selection-start-line="122" selection-start-column="4" selection-end-line="122" selection-end-column="76" />
           <folding>
             <element signature="e#30052#41942#0" expanded="false" />
           </folding>
@@ -1036,9 +1010,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/data/map_and_bpref_vary_lambda.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="19" column="1" lean-forward="false" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+        <state relative-caret-position="285">
+          <caret line="23" column="29" lean-forward="false" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/best_parameter_per_dataset.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="70" column="90" lean-forward="false" selection-start-line="70" selection-start-column="12" selection-end-line="70" selection-end-column="90" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/topic_distribution_real_cost_command_line.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3357">
+          <caret line="1317" column="20" lean-forward="false" selection-start-line="1317" selection-start-column="20" selection-end-line="1317" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/topic_distribution_real_cost_detereministic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="60" column="0" lean-forward="true" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+          <folding>
+            <element signature="e#126#135#0" expanded="true" />
+            <element signature="e#31492#43382#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

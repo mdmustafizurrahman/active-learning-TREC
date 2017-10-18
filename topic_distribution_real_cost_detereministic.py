@@ -31,15 +31,11 @@ docrepresentation = "TF-IDF"  # can be BOW, TF-IDF
 sampling=False # can be True or False
 command_prompt_use = True
 
-#if command_prompt_use == True:
-import sys
 
+#if command_prompt_use == True:
+'''
 datasource = sys.argv[1] # can be  dataset = ['TREC8', 'gov2', 'WT']
 protocol = sys.argv[2]
-lambda_param = float(sys.argv[3])
-alpha_param = int(sys.argv[4]) # can be 1 or 2, 1 means more emphasize on easy topic, 2 means more emphasize on hard topic
-
-'''
 use_ranker = sys.argv[3]
 iter_sampling = sys.argv[4]
 correction = sys.argv[5] #'SAL' can be ['SAL', 'CAL', 'SPL']
@@ -47,15 +43,16 @@ train_per_centage_flag = sys.argv[6]
 '''
 
 #parameter set # all FLAGS must be string
-#datasource = 'gov2'  # can be  dataset = ['TREC8', 'gov2', 'WT']
-#protocol = 'CAL'  # 'SAL' can be ['SAL', 'CAL', 'SPL']
+datasource = 'WT2013'  # can be  dataset = ['TREC8', 'gov2', 'WT']
+protocol = 'CAL'  # 'SAL' can be ['SAL', 'CAL', 'SPL']
 use_ranker = 'True'
 iter_sampling = 'True'
 correction = 'False'
 train_per_centage_flag = 'True'
-deterministic = 'True' # this is hard coded and does not take as an input from command line
-#lambda_param = 0.5
-#alpha_param = 2 # can be 1 or 2, 1 means more emphasize on easy topic, 2 means more emphasize on hard topic
+deterministic = 'False'
+ht_estimation = 'True'
+lambda_param = 0.5
+alpha_param = 1 # can be 1 or 2, 1 means more emphasize on easy topic, 2 means more emphasize on hard topic
 
 print "Ranker_use", use_ranker
 print "iter_sampling", iter_sampling
@@ -70,10 +67,10 @@ train_per_centage = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
 budget_list = []
 
 ranker_location = {}
-ranker_location["WT2013"] = "/work/04549/mustaf/maverick/data/TREC/WT2013/input.ICTNET13RSR2"
-ranker_location["WT2014"] = "/work/04549/mustaf/maverick/data/TREC/WT2014/input.Protoss"
-ranker_location["gov2"] = "/work/04549/mustaf/maverick/data/TREC/gov2/input.indri06AdmD"
-ranker_location["TREC8"] = "/work/04549/mustaf/maverick/data/TREC/TREC8/input.ibmg99b"
+ranker_location["WT2013"] = "/media/nahid/Windows8_OS/unzippedsystemRanking/WT2013/input.ICTNET13RSR2"
+ranker_location["WT2014"] = "/media/nahid/Windows8_OS/unzippedsystemRanking/WT2014/input.Protoss"
+ranker_location["gov2"] = "/media/nahid/Windows8_OS/unzippedsystemRanking/gov2/input.indri06AdmD"
+ranker_location["TREC8"] = "/media/nahid/Windows8_OS/unzippedsystemRanking/TREC8/input.ibmg99b"
 
 n_labeled =  10 #50      # number of samples that are initially labeled
 batch_size = 25 #50
@@ -88,17 +85,26 @@ start_topic = 0
 end_topic = 0
 datasetsize = 0
 
-base_address = "/work/04549/mustaf/maverick/data/TREC/"
+
+base_address = "/media/nahid/Windows8_OS/clueweb12/topic_dist/"
+
+
 
 if deterministic == 'True':
     deterministic = True
-    base_address = "/work/04549/mustaf/maverick/data/TREC/deterministic/"
-    lambda_param = 0.0
-    alpha_param = 1
+    base_address = "/media/nahid/Windows8_OS/clueweb12/topic_dist/deterministic/"
 else:
     deterministic = False
 
+if ht_estimation == 'True':
+    ht_estimation = True
+    base_address = "/media/nahid/Windows8_OS/clueweb12/topic_dist/estimation/"
+else:
+    ht_estimation = False
 
+if deterministic == True and ht_estimation == True:
+    print("Bothe deterministic and htestimation parameter cannot be true")
+    exit(-1)
 
 base_address = base_address +str(datasource)+"/"
 if use_ranker == 'True':
@@ -124,35 +130,33 @@ else:
     train_per_centage_flag = False
 
 
+print "base address:", base_address
 
 if iter_sampling == True and correction == True:
     print "Over sampling and HT correction cannot be done together"
     exit(-1)
 
-base_address = base_address + str(lambda_param) + "/" + str(alpha_param) + "/"
-
-print "base address:", base_address
 if datasource=='TREC8':
-    processed_file_location = '/work/04549/mustaf/maverick/data/TREC/TREC8/processed.txt'
-    RELEVANCE_DATA_DIR = '/work/04549/mustaf/maverick/data/TREC/TREC8/relevance.txt'
+    processed_file_location = '/home/nahid/UT_research/TREC/TREC8/processed.txt'
+    RELEVANCE_DATA_DIR = '/home/nahid/UT_research/TREC/TREC8/relevance.txt'
     start_topic = 401
     end_topic = 451
     datasetsize = 86830
 elif datasource=='gov2':
-    processed_file_location = '/work/04549/mustaf/maverick/data/TREC/gov2/processed.txt'
-    RELEVANCE_DATA_DIR = '/work/04549/mustaf/maverick/data/TREC/gov2/qrels.tb06.top50.txt'
+    processed_file_location = '/home/nahid/UT_research/TREC/gov2/processed.txt'
+    RELEVANCE_DATA_DIR = '/home/nahid/UT_research/TREC/qrels.tb06.top50.txt'
     start_topic = 801
     end_topic = 851
     datasetsize = 31984
 elif datasource=='WT2013':
-    processed_file_location = '/work/04549/mustaf/maverick/data/TREC/WT2013/processed_new.txt'
-    RELEVANCE_DATA_DIR = '/work/04549/mustaf/maverick/data/TREC/WT2013/qrelsadhoc2013.txt'
+    processed_file_location = '/media/nahid/Windows8_OS/clueweb12/pythonprocessed/processed_new.txt'
+    RELEVANCE_DATA_DIR = '/media/nahid/Windows8_OS/clueweb12/qrels/qrelsadhoc2013.txt'
     start_topic = 201
     end_topic = 251
     datasetsize = 14474
 else:
-    processed_file_location = '/work/04549/mustaf/maverick/data/TREC/WT2014/processed_new.txt'
-    RELEVANCE_DATA_DIR = '/work/04549/mustaf/maverick/data/TREC/WT2014/qrelsadhoc2014.txt'
+    processed_file_location = '/media/nahid/Windows8_OS/clueweb12/pythonprocessed/processed_new.txt'
+    RELEVANCE_DATA_DIR = '/media/nahid/Windows8_OS/clueweb12/qrels/qrelsadhoc2014.txt'
     start_topic = 251
     end_topic = 301
     datasetsize = 14432
@@ -265,6 +269,7 @@ def get_topic_distribution():
     topic_initial_X_train = {}
     topic_initial_Y_train = {}
     topic_seed_one_counter = {}
+    topic_estimated_one_counter = {}
     topic_seed_zero_counter = {}
     topic_seed_counter = {}
     total_judged = 0
@@ -445,8 +450,9 @@ def get_topic_distribution():
         topic_seed_counter[topic] = seed_zero_counter + seed_one_counter
         total_judged = total_judged + topic_seed_counter[topic]
         topic_train_percentage_loop_counter[topic] = 0
+        topic_estimated_one_counter[topic] = 0 # initiall no estimation
 
-    return topic_initial_X_train, topic_initial_Y_train, topic_seed_one_counter, topic_seed_zero_counter, topic_seed_counter, topic_train_index_list, total_judged, topic_train_percentage_loop_counter, total_document_in_relevance_judgement
+    return topic_initial_X_train, topic_initial_Y_train, topic_seed_one_counter, topic_seed_zero_counter, topic_seed_counter, topic_train_index_list, total_judged, topic_train_percentage_loop_counter, total_document_in_relevance_judgement, topic_estimated_one_counter
 
 
 
@@ -491,7 +497,7 @@ for test_size in test_size_set:
         pred_str = ""
 
 
-        topic_initial_X_train, topic_initial_Y_train, topic_seed_one_counter, topic_seed_zero_counter, topic_seed_counter, topic_train_index_list, total_judged, topic_loopCounter, total_document_in_relevance_judgement  = get_topic_distribution()
+        topic_initial_X_train, topic_initial_Y_train, topic_seed_one_counter, topic_seed_zero_counter, topic_seed_counter, topic_train_index_list, total_judged, topic_loopCounter, total_document_in_relevance_judgement, topic_estimated_one_counter  = get_topic_distribution()
 
         print "Collection:", datasource, "Actual Files used:", total_document_in_relevance_judgement
         # calculating the budget size
@@ -551,9 +557,10 @@ for test_size in test_size_set:
                     topic = indexToTopicId[sample_topic_list.index(1)]
                 else:
                     print "Deterministic"
-                    sample_topic_list = deterministic_topic_sample_number % topicUsedListIndex
+                    sample_topic_list = deterministic_topic_sample_number%topicUsedListIndex
                     topic = indexToTopicId[sample_topic_list]
                     deterministic_topic_sample_number = deterministic_topic_sample_number + 1
+
 
                 print "Sampled Topic:", topic
                 #number_of_samples = number_of_samples + 1
@@ -712,13 +719,14 @@ for test_size in test_size_set:
                 loopCounter = topic_loopCounter[topic]
                 currentTopic = topic
                 topic_total_document_judged = topic_seed_counter[topic] # total document judged so far for the topic
-
+                print "topic:", topic, "total document judged:", topic_total_document_judged, "len(X):", len(X)
                 if topic_total_document_judged<len(X): # topic still has document
-                    if (topic_total_document_judged + batch_size) < len(X):
+                    print "topic:", topic, "Before batch_size", batch_size
+                    if (topic_total_document_judged + 25) < len(X):
                         batch_size = 25
                     else:
                         batch_size = len(X) - topic_total_document_judged
-
+                    print "topic:", topic, "batch_size", batch_size
                     if use_ranker == True:
                         # collecting the seed list from the Rankers
                         seed_list = Ranker_topic_to_doclist[topic]
@@ -969,6 +977,8 @@ for test_size in test_size_set:
                             numberofloop = len(train_per_centage)
                             train_size_controller = len(unmodified_train_X)
 
+                            estimated_remaining_documnets = 0
+
                             #size_limit = math.ceil(train_per_centage[loopCounter]*len(X))
                             size_limit = train_size_controller + batch_size
                             print "Loop:", loopCounter
@@ -1067,6 +1077,10 @@ for test_size in test_size_set:
                             # here is queueSize is the number of predictable element
                             queueSize = isPredictable.count(1)
 
+                            elementsProbability = []
+                            elementsIndex = []
+                            elementsLabel = []
+
                             if protocol == 'CAL':
                                 print "####CAL####"
                                 queue = Queue.PriorityQueue(queueSize)
@@ -1083,39 +1097,98 @@ for test_size in test_size_set:
                                         # print y_prob
                                         queue.put(relevance(y_prob[1], counter))
                                         sumForCorrection = sumForCorrection + y_prob[1]
+                                        elementsProbability.append(y_prob[1])
+                                        elementsIndex.append(counter)
+                                        elementsLabel.append(initial_y_test[counter])
 
-                                batch_counter = 0
-                                while not queue.empty():
-                                    if train_size_controller == size_limit:
-                                        break
-                                    item = queue.get()
-                                    # print len(item)
-                                    # print item.priority, item.index
+                                if ht_estimation == True:
+                                    normalized_element_probability = [float(elem_prob) / sum(elementsProbability) for
+                                                                     elem_prob in
+                                                                     elementsProbability]
 
-                                    isPredictable[item.index] = 0  # not predictable
-                                    # initial_X_train.append(initial_X_test[item.index])
-                                    # initial_y_train.append(initial_y_test[item.index])
 
-                                    if correction == True:
-                                        correctionWeight = item.priority / sumForCorrection
-                                        # correctedItem = [x / correctionWeight for x in initial_X_test[item.index]]
-                                        unmodified_train_X.append(initial_X_test[item.index])
-                                        sampling_weight.append(correctionWeight)
-                                    else:
-                                        unmodified_train_X.append(initial_X_test[item.index])
-                                        sampling_weight.append(1.0)
-                                    unmodified_train_y.append(initial_y_test[item.index])
-                                    if int(initial_y_test[item.index]) == 1:
-                                        seed_one_counter = seed_one_counter + 1
-                                    else:
-                                        seed_zero_counter = seed_zero_counter + 1
+                                    #print "normalized element prob:", normalized_element_probability
+                                    sample_document_list = np.random.multinomial(batch_size, normalized_element_probability,size=1)[
+                                        0].tolist()
 
-                                    train_index_list.append(test_index_list[item.index])
 
-                                    # print "Docs:", initial_X_test[item.index]
-                                    loopDocList.append(int(initial_y_test[item.index]))
-                                    train_size_controller = train_size_controller + 1
-                                    # print X_train.append(X_test.pop(item.priority))
+                                    #print "sample document list:", sample_document_list
+                                    # sample_document_list = [1,0,3] # mean oth index 1 times, second index 3 times
+                                    # so next line check documentValue >= 1
+
+                                    document_id_list = [documentid for documentid, documentvalue in enumerate(sample_document_list) if documentvalue >= 1]
+                                    # calculate inclusion probability only for relevant documents
+                                    # to save compuatation tme
+                                    #print "document id list:", document_id_list
+                                    #unique document list
+                                    unique_document_id_list = list(set(document_id_list))
+                                    #print "unique docs list:", unique_document_id_list
+                                    #document_inclusion_probability = []
+
+
+                                    for documentid in unique_document_id_list:
+                                        #print elementsLabel
+                                        if int(elementsLabel[documentid]) == 1:
+                                            inclusion_prob = 1 - pow((1 - normalized_element_probability[documentid]), batch_size)
+                                            estimated_remaining_documnets = estimated_remaining_documnets + (elementsLabel[documentid]/inclusion_prob)
+
+                                        itemIndex = elementsIndex[documentid]
+
+                                        isPredictable[itemIndex] = 0  # not predictable
+                                        # initial_X_train.append(initial_X_test[item.index])
+                                        # initial_y_train.append(initial_y_test[item.index])
+
+                                        unmodified_train_X.append(initial_X_test[itemIndex])
+                                        unmodified_train_y.append(initial_y_test[itemIndex])
+
+                                        if int(initial_y_test[itemIndex]) == 1:
+                                            seed_one_counter = seed_one_counter + 1
+                                        else:
+                                            seed_zero_counter = seed_zero_counter + 1
+
+                                        train_index_list.append(test_index_list[itemIndex])
+
+                                        # print "Docs:", initial_X_test[item.index]
+                                        loopDocList.append(int(initial_y_test[itemIndex]))
+                                        train_size_controller = train_size_controller + 1
+                                        # print X_train.append(X_test.pop(item.priority))
+
+                                    print "Estimated Relevant Documents:", estimated_remaining_documnets
+                                    # updating batc_size since we might not use 25 since we are performing sample with replacement
+                                    batch_size = len(unique_document_id_list)
+                                else:
+                                    batch_counter = 0
+                                    while not queue.empty():
+                                        if train_size_controller == size_limit:
+                                            break
+                                        item = queue.get()
+                                        # print len(item)
+                                        # print item.priority, item.index
+
+                                        isPredictable[item.index] = 0  # not predictable
+                                        # initial_X_train.append(initial_X_test[item.index])
+                                        # initial_y_train.append(initial_y_test[item.index])
+
+                                        if correction == True:
+                                            correctionWeight = item.priority / sumForCorrection
+                                            # correctedItem = [x / correctionWeight for x in initial_X_test[item.index]]
+                                            unmodified_train_X.append(initial_X_test[item.index])
+                                            sampling_weight.append(correctionWeight)
+                                        else:
+                                            unmodified_train_X.append(initial_X_test[item.index])
+                                            sampling_weight.append(1.0)
+                                        unmodified_train_y.append(initial_y_test[item.index])
+                                        if int(initial_y_test[item.index]) == 1:
+                                            seed_one_counter = seed_one_counter + 1
+                                        else:
+                                            seed_zero_counter = seed_zero_counter + 1
+
+                                        train_index_list.append(test_index_list[item.index])
+
+                                        # print "Docs:", initial_X_test[item.index]
+                                        loopDocList.append(int(initial_y_test[item.index]))
+                                        train_size_controller = train_size_controller + 1
+                                        # print X_train.append(X_test.pop(item.priority))
 
                             if protocol == 'SAL':
                                 print "####SAL####"
@@ -1210,12 +1283,14 @@ for test_size in test_size_set:
                             topic_initial_X_train[topic] = unmodified_train_X
                             topic_initial_Y_train[topic] = unmodified_train_y
                             topic_seed_one_counter[topic] =  topic_seed_one_counter[topic] + seed_one_counter
+                            topic_estimated_one_counter[topic] = estimated_remaining_documnets # it is only update no increment
                             topic_seed_zero_counter[topic] =  topic_seed_zero_counter[topic] + seed_zero_counter
                             topic_seed_counter[topic] = topic_seed_counter[topic] + seed_one_counter + seed_zero_counter
                             topic_train_index_list[topic] = train_index_list
                             topic_loopCounter[topic] = topic_loopCounter[topic] + 1
                             print "Topic Seed Counter: It should be 25", batch_size, topic_seed_counter[topic]
                             total_judged = total_judged + batch_size
+
                     topic_distribution = []
                     for topic in xrange(start_topic, end_topic):
                         print "Topic:", topic
@@ -1226,10 +1301,17 @@ for test_size in test_size_set:
                         print topic_seed_one_counter[topic], topic_seed_zero_counter[topic], topic_seed_counter[topic]
 
                         alpha = 0.0
-                        if alpha_param == 1:
-                            alpha = ((topic_seed_one_counter[topic] * 1.0) / topic_seed_counter[topic])
-                        else:  # alpha_param == 2
-                            alpha = 1.0 - ((topic_seed_one_counter[topic] * 1.0) / topic_seed_counter[topic])
+
+                        if ht_estimation == False:
+                            if alpha_param == 1:
+                                alpha = ((topic_seed_one_counter[topic] * 1.0) / topic_seed_counter[topic])
+                            else:  # alpha_param == 2
+                                alpha = 1.0 - ((topic_seed_one_counter[topic] * 1.0) / topic_seed_counter[topic])
+                        else:
+                            if alpha_param == 1:
+                                alpha = ((topic_seed_one_counter[topic] * 1.0) / (topic_seed_one_counter[topic] + topic_estimated_one_counter[topic]))
+                            else:  # alpha_param == 2
+                                alpha = 1.0 - ((topic_seed_one_counter[topic] * 1.0) / (topic_seed_one_counter[topic] + topic_estimated_one_counter[topic]))
 
                         beta = 1- ((topic_seed_counter[topic] * 1.0) / total_judged)
                         topic_selection_probability = alpha * lambda_param + beta * (1 - lambda_param)
@@ -1308,8 +1390,6 @@ for test_size in test_size_set:
 
                     #################
 
-
-
                     if deterministic == True:
                         topicIndexNumber = sample_topic_list
                     else:
@@ -1326,10 +1406,17 @@ for test_size in test_size_set:
                         topic = str(topic)
                         print topic_seed_one_counter[topic], topic_seed_zero_counter[topic], topic_seed_counter[topic]
                         alpha = 0.0
-                        if alpha_param == 1:
-                            alpha = ((topic_seed_one_counter[topic] * 1.0) / topic_seed_counter[topic])
-                        else:  # alpha_param == 2
-                            alpha = 1.0 - ((topic_seed_one_counter[topic] * 1.0) / topic_seed_counter[topic])
+
+                        if ht_estimation == False:
+                            if alpha_param == 1:
+                                alpha = ((topic_seed_one_counter[topic] * 1.0) / topic_seed_counter[topic])
+                            else:  # alpha_param == 2
+                                alpha = 1.0 - ((topic_seed_one_counter[topic] * 1.0) / topic_seed_counter[topic])
+                        else:
+                            if alpha_param == 1:
+                                alpha = ((topic_seed_one_counter[topic] * 1.0) / (topic_seed_one_counter[topic] + topic_estimated_one_counter[topic]))
+                            else:  # alpha_param == 2
+                                alpha = 1.0 - ((topic_seed_one_counter[topic] * 1.0) / (topic_seed_one_counter[topic] + topic_estimated_one_counter[topic]))
 
                         beta = 1- ((topic_seed_counter[topic] * 1.0) / total_judged)
                         topic_selection_probability = alpha * lambda_param + beta * (1 - lambda_param)
