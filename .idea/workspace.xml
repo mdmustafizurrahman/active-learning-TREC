@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b0535bd4-8300-4b90-97dc-682304dbc22d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/topic_distribution_real_cost_detereministic.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/commandgenerator1_batch_lambda_deterministic.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/commandgenerator1_batch_lambda_estimation.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/map_and_bpref_vary_lambda.py" afterPath="$PROJECT_DIR$/data/map_and_bpref_vary_lambda.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/topic_distribution_real_cost_command_line.py" afterPath="$PROJECT_DIR$/topic_distribution_real_cost_command_line.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/topic_distribution_real_cost_detereministic.py" afterPath="$PROJECT_DIR$/topic_distribution_real_cost_detereministic.py" />
     </list>
     <ignored path="parser.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,7 +49,7 @@
       <file leaf-file-name="topic_distribution_real_cost.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/topic_distribution_real_cost.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1620">
+            <state relative-caret-position="0">
               <caret line="122" column="76" lean-forward="false" selection-start-line="122" selection-start-column="4" selection-end-line="122" selection-end-column="76" />
               <folding>
                 <element signature="e#30052#41942#0" expanded="false" />
@@ -67,45 +68,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="topic_distribution_real_cost_detereministic.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="topic_distribution_real_cost_detereministic.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/topic_distribution_real_cost_detereministic.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="60" column="0" lean-forward="true" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+            <state relative-caret-position="308">
+              <caret line="1391" column="0" lean-forward="true" selection-start-line="1383" selection-start-column="28" selection-end-line="1391" selection-end-column="0" />
               <folding>
                 <element signature="e#126#135#0" expanded="true" />
-                <element signature="e#31492#43382#0" expanded="false" />
+                <element signature="e#31685#43575#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="topic_distribution_real_cost_command_line.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="topic_distribution_real_cost_command_line.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/topic_distribution_real_cost_command_line.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3357">
-              <caret line="1317" column="20" lean-forward="false" selection-start-line="1317" selection-start-column="20" selection-end-line="1317" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="f-1collector_vary_lambda.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/f-1collector_vary_lambda.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="10" column="53" lean-forward="false" selection-start-line="10" selection-start-column="53" selection-end-line="10" selection-end-column="53" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="map_and_bpref_vary_lambda.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/map_and_bpref_vary_lambda.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="23" column="29" lean-forward="false" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
-              <folding />
+            <state relative-caret-position="68">
+              <caret line="1285" column="113" lean-forward="false" selection-start-line="1285" selection-start-column="113" selection-end-line="1285" selection-end-column="113" />
+              <folding>
+                <element signature="e#31749#43639#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -123,18 +106,8 @@
       <file leaf-file-name="commandgenerator1_batch_lambda.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data/commandgenerator1_batch_lambda.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="34" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="complete_f-1collector_with_no_oversample.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/complete_f-1collector_with_no_oversample.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2460">
-              <caret line="168" column="12" lean-forward="false" selection-start-line="52" selection-start-column="8" selection-end-line="168" selection-end-column="12" />
+            <state relative-caret-position="105">
+              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -192,8 +165,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Corrected_BasicLRIndriTREC8_ownal_with_validation.py" />
-        <option value="$PROJECT_DIR$/finite_pool.py" />
         <option value="$PROJECT_DIR$/finite_pool_correction.py" />
         <option value="$PROJECT_DIR$/finite_pool_correction_no_ranker.py" />
         <option value="$PROJECT_DIR$/data/new_f-1collector.py" />
@@ -241,8 +212,10 @@
         <option value="$PROJECT_DIR$/shellCommandRunner_new_map1_and_bpref1.py" />
         <option value="$PROJECT_DIR$/qRelModifier.py" />
         <option value="$PROJECT_DIR$/data/map_and_bpref_vary_lambda.py" />
-        <option value="$PROJECT_DIR$/topic_distribution_real_cost_command_line.py" />
+        <option value="$PROJECT_DIR$/data/commandgenerator1_batch_lambda_deterministic.py" />
+        <option value="$PROJECT_DIR$/data/commandgenerator1_batch_lambda_estimation.py" />
         <option value="$PROJECT_DIR$/topic_distribution_real_cost_detereministic.py" />
+        <option value="$PROJECT_DIR$/topic_distribution_real_cost_command_line.py" />
       </list>
     </option>
   </component>
@@ -325,33 +298,15 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/data" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/data" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/data" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
   <component name="RunManager" selected="Python.topic_distribution_real_cost_detereministic">
-    <configuration default="false" name="f-1collector_vary_lambda" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="parser" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/f-1collector_vary_lambda.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
     <configuration default="false" name="best_parameter_per_dataset" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -388,24 +343,6 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="qRelModifier" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="parser" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/qRelModifier.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
     <configuration default="false" name="topic_distribution_real_cost_detereministic" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -420,6 +357,42 @@
       <module name="parser" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/topic_distribution_real_cost_detereministic.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="commandgenerator1_batch_lambda_deterministic" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="parser" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/commandgenerator1_batch_lambda_deterministic.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="commandgenerator1_batch_lambda_estimation" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="parser" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/commandgenerator1_batch_lambda_estimation.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -566,19 +539,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.f-1collector_vary_lambda" />
-      <item index="1" class="java.lang.String" itemvalue="Python.best_parameter_per_dataset" />
-      <item index="2" class="java.lang.String" itemvalue="Python.map_and_bpref_vary_lambda" />
-      <item index="3" class="java.lang.String" itemvalue="Python.qRelModifier" />
-      <item index="4" class="java.lang.String" itemvalue="Python.topic_distribution_real_cost_detereministic" />
+      <item index="0" class="java.lang.String" itemvalue="Python.best_parameter_per_dataset" />
+      <item index="1" class="java.lang.String" itemvalue="Python.map_and_bpref_vary_lambda" />
+      <item index="2" class="java.lang.String" itemvalue="Python.topic_distribution_real_cost_detereministic" />
+      <item index="3" class="java.lang.String" itemvalue="Python.commandgenerator1_batch_lambda_deterministic" />
+      <item index="4" class="java.lang.String" itemvalue="Python.commandgenerator1_batch_lambda_estimation" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Python.topic_distribution_real_cost_detereministic" />
-        <item index="1" class="java.lang.String" itemvalue="Python.best_parameter_per_dataset" />
-        <item index="2" class="java.lang.String" itemvalue="Python.map_and_bpref_vary_lambda" />
-        <item index="3" class="java.lang.String" itemvalue="Python.qRelModifier" />
-        <item index="4" class="java.lang.String" itemvalue="Python.f-1collector_vary_lambda" />
+        <item index="1" class="java.lang.String" itemvalue="Python.commandgenerator1_batch_lambda_estimation" />
+        <item index="2" class="java.lang.String" itemvalue="Python.commandgenerator1_batch_lambda_deterministic" />
+        <item index="3" class="java.lang.String" itemvalue="Python.best_parameter_per_dataset" />
+        <item index="4" class="java.lang.String" itemvalue="Python.map_and_bpref_vary_lambda" />
       </list>
     </recent_temporary>
   </component>
@@ -676,20 +649,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/testttt.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SystemRankingModifier.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="9" lean-forward="false" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/shellCommandRunner1.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
@@ -953,14 +912,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/commandgenerator1_batch_lambda.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="34" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vary_final_f-1collector_one_row.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="325">
@@ -992,7 +943,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/topic_distribution_real_cost.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1620">
+        <state relative-caret-position="0">
           <caret line="122" column="76" lean-forward="false" selection-start-line="122" selection-start-column="4" selection-end-line="122" selection-end-column="76" />
           <folding>
             <element signature="e#30052#41942#0" expanded="false" />
@@ -1016,6 +967,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/data/commandgenerator1_batch_lambda.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/commandgenerator1_batch_lambda_estimation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="3" lean-forward="false" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/data/best_parameter_per_dataset.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -1024,21 +991,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/topic_distribution_real_cost_command_line.py">
+    <entry file="file://$PROJECT_DIR$/data/commandgenerator1_batch_lambda_deterministic.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3357">
-          <caret line="1317" column="20" lean-forward="false" selection-start-line="1317" selection-start-column="20" selection-end-line="1317" selection-end-column="20" />
+        <state relative-caret-position="255">
+          <caret line="17" column="8" lean-forward="false" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/topic_distribution_real_cost_detereministic.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="60" column="0" lean-forward="true" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+        <state relative-caret-position="308">
+          <caret line="1391" column="0" lean-forward="true" selection-start-line="1383" selection-start-column="28" selection-end-line="1391" selection-end-column="0" />
           <folding>
             <element signature="e#126#135#0" expanded="true" />
-            <element signature="e#31492#43382#0" expanded="false" />
+            <element signature="e#31685#43575#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/topic_distribution_real_cost_command_line.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="1285" column="113" lean-forward="false" selection-start-line="1285" selection-start-column="113" selection-end-line="1285" selection-end-column="113" />
+          <folding>
+            <element signature="e#31749#43639#0" expanded="false" />
           </folding>
         </state>
       </provider>

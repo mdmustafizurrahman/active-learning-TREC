@@ -44,15 +44,15 @@ train_per_centage_flag = sys.argv[6]
 
 #parameter set # all FLAGS must be string
 datasource = 'WT2013'  # can be  dataset = ['TREC8', 'gov2', 'WT']
-protocol = 'CAL'  # 'SAL' can be ['SAL', 'CAL', 'SPL']
+protocol = 'SAL'  # 'SAL' can be ['SAL', 'CAL', 'SPL']
 use_ranker = 'True'
 iter_sampling = 'True'
 correction = 'False'
 train_per_centage_flag = 'True'
 deterministic = 'False'
 ht_estimation = 'True'
-lambda_param = 0.5
-alpha_param = 1 # can be 1 or 2, 1 means more emphasize on easy topic, 2 means more emphasize on hard topic
+lambda_param = 1.0
+alpha_param = 2 # can be 1 or 2, 1 means more emphasize on easy topic, 2 means more emphasize on hard topic
 
 print "Ranker_use", use_ranker
 print "iter_sampling", iter_sampling
@@ -271,6 +271,7 @@ def get_topic_distribution():
     topic_seed_one_counter = {}
     topic_estimated_one_counter = {}
     topic_seed_zero_counter = {}
+    topic_estimated_zero_counter = {}
     topic_seed_counter = {}
     total_judged = 0
     topic_train_percentage_loop_counter = {}
@@ -450,9 +451,9 @@ def get_topic_distribution():
         topic_seed_counter[topic] = seed_zero_counter + seed_one_counter
         total_judged = total_judged + topic_seed_counter[topic]
         topic_train_percentage_loop_counter[topic] = 0
-        topic_estimated_one_counter[topic] = 0 # initiall no estimation
-
-    return topic_initial_X_train, topic_initial_Y_train, topic_seed_one_counter, topic_seed_zero_counter, topic_seed_counter, topic_train_index_list, total_judged, topic_train_percentage_loop_counter, total_document_in_relevance_judgement, topic_estimated_one_counter
+        topic_estimated_one_counter[topic] = 0 # initially no estimation, 1 for smoothing with alpha = 2 and lambda = 1
+        topic_estimated_zero_counter[topic] = 0
+    return topic_initial_X_train, topic_initial_Y_train, topic_seed_one_counter, topic_seed_zero_counter, topic_seed_counter, topic_train_index_list, total_judged, topic_train_percentage_loop_counter, total_document_in_relevance_judgement, topic_estimated_one_counter, topic_estimated_zero_counter
 
 
 
@@ -497,7 +498,7 @@ for test_size in test_size_set:
         pred_str = ""
 
 
-        topic_initial_X_train, topic_initial_Y_train, topic_seed_one_counter, topic_seed_zero_counter, topic_seed_counter, topic_train_index_list, total_judged, topic_loopCounter, total_document_in_relevance_judgement, topic_estimated_one_counter  = get_topic_distribution()
+        topic_initial_X_train, topic_initial_Y_train, topic_seed_one_counter, topic_seed_zero_counter, topic_seed_counter, topic_train_index_list, total_judged, topic_loopCounter, total_document_in_relevance_judgement, topic_estimated_one_counter, topic_estimated_zero_counter  = get_topic_distribution()
 
         print "Collection:", datasource, "Actual Files used:", total_document_in_relevance_judgement
         # calculating the budget size
@@ -977,8 +978,8 @@ for test_size in test_size_set:
                             numberofloop = len(train_per_centage)
                             train_size_controller = len(unmodified_train_X)
 
-                            estimated_remaining_documnets = 0
-
+                            estimated_remaining_relevant_documnets = 0
+                            estimated_remaining_non_relevant_documnets = 0
                             #size_limit = math.ceil(train_per_centage[loopCounter]*len(X))
                             size_limit = train_size_controller + batch_size
                             print "Loop:", loopCounter
@@ -1130,7 +1131,12 @@ for test_size in test_size_set:
                                         #print elementsLabel
                                         if int(elementsLabel[documentid]) == 1:
                                             inclusion_prob = 1 - pow((1 - normalized_element_probability[documentid]), batch_size)
-                                            estimated_remaining_documnets = estimated_remaining_documnets + (elementsLabel[documentid]/inclusion_prob)
+                                            estimated_remaining_relevant_documnets = estimated_remaining_relevant_documnets + (elementsLabel[documentid]/inclusion_prob)
+
+                                        else:
+                                            inclusion_prob = 1 - pow((1 - normalized_element_probability[documentid]), batch_size)
+                                            estimated_remaining_non_relevant_documnets = estimated_remaining_non_relevant_documnets + (elementsLabel[documentid]/inclusion_prob)
+
 
                                         itemIndex = elementsIndex[documentid]
 
@@ -1153,7 +1159,7 @@ for test_size in test_size_set:
                                         train_size_controller = train_size_controller + 1
                                         # print X_train.append(X_test.pop(item.priority))
 
-                                    print "Estimated Relevant Documents:", estimated_remaining_documnets
+                                    print "Estimated Relevant Documents:", estimated_remaining_relevant_documnets
                                     # updating batc_size since we might not use 25 since we are performing sample with replacement
                                     batch_size = len(unique_document_id_list)
                                 else:
@@ -1205,35 +1211,101 @@ for test_size in test_size_set:
                                         entropy = (-1) * (y_prob[0] * log(y_prob[0], 2) + y_prob[1] * log(y_prob[1], 2))
                                         queue.put(relevance(entropy, counter))
                                         sumForCorrection = sumForCorrection + entropy
+                                        elementsProbability.append(entropy)
+                                        elementsIndex.append(counter)
+                                        elementsLabel.append(initial_y_test[counter])
 
-                                batch_counter = 0
-                                while not queue.empty():
-                                    if train_size_controller == size_limit:
-                                        break
-                                    item = queue.get()
-                                    # print len(item)
-                                    # print item.priority, item.index
-                                    isPredictable[item.index] = 0  # not predictable
-                                    if correction == True:
-                                        correctionWeight = item.priority / sumForCorrection
-                                        # correctedList = [x / correctionWeight for x in initial_X_test[item.index]]
-                                        unmodified_train_X.append(initial_X_test[item.index])
-                                        sampling_weight.append(correctionWeight)
-                                    else:
-                                        unmodified_train_X.append(initial_X_test[item.index])
-                                        sampling_weight.append(1.0)
+                                if ht_estimation == True:
+                                    normalized_element_probability = [float(elem_prob) / sum(elementsProbability)
+                                                                      for
+                                                                      elem_prob in
+                                                                      elementsProbability]
 
-                                    unmodified_train_y.append(initial_y_test[item.index])
-                                    if int(initial_y_test[item.index]) == 1:
-                                        seed_one_counter = seed_one_counter + 1
-                                    else:
-                                        seed_zero_counter = seed_zero_counter + 1
+                                    # print "normalized element prob:", normalized_element_probability
+                                    sample_document_list = \
+                                    np.random.multinomial(batch_size, normalized_element_probability, size=1)[
+                                        0].tolist()
 
-                                    train_index_list.append(test_index_list[item.index])
+                                    # print "sample document list:", sample_document_list
+                                    # sample_document_list = [1,0,3] # mean oth index 1 times, second index 3 times
+                                    # so next line check documentValue >= 1
 
-                                    loopDocList.append(int(initial_y_test[item.index]))
-                                    train_size_controller = train_size_controller + 1
-                                    # print X_train.append(X_test.pop(item.priority))
+                                    document_id_list = []
+                                    document_id_list = [documentid for documentid, documentvalue in
+                                                        enumerate(sample_document_list) if documentvalue >= 1]
+                                    # calculate inclusion probability only for relevant documents
+                                    # to save compuatation tme
+                                    # print "document id list:", document_id_list
+                                    # unique document list
+                                    unique_document_id_list = []
+                                    unique_document_id_list = list(set(document_id_list))
+                                    # print "unique docs list:", unique_document_id_list
+                                    # document_inclusion_probability = []
+
+
+                                    for documentid in unique_document_id_list:
+                                        # print elementsLabel
+                                        if int(elementsLabel[documentid]) == 1:
+                                            inclusion_prob = 1 - pow((1 - normalized_element_probability[documentid]), batch_size)
+                                            estimated_remaining_relevant_documnets = estimated_remaining_relevant_documnets + (elementsLabel[documentid]/inclusion_prob)
+
+                                        else:
+                                            inclusion_prob = 1 - pow((1 - normalized_element_probability[documentid]), batch_size)
+                                            estimated_remaining_non_relevant_documnets = estimated_remaining_non_relevant_documnets + (elementsLabel[documentid]/inclusion_prob)
+
+                                        itemIndex = elementsIndex[documentid]
+
+                                        isPredictable[itemIndex] = 0  # not predictable
+                                        # initial_X_train.append(initial_X_test[item.index])
+                                        # initial_y_train.append(initial_y_test[item.index])
+
+                                        unmodified_train_X.append(initial_X_test[itemIndex])
+                                        unmodified_train_y.append(initial_y_test[itemIndex])
+
+                                        if int(initial_y_test[itemIndex]) == 1:
+                                            seed_one_counter = seed_one_counter + 1
+                                        else:
+                                            seed_zero_counter = seed_zero_counter + 1
+
+                                        train_index_list.append(test_index_list[itemIndex])
+
+                                        # print "Docs:", initial_X_test[item.index]
+                                        loopDocList.append(int(initial_y_test[itemIndex]))
+                                        train_size_controller = train_size_controller + 1
+                                        # print X_train.append(X_test.pop(item.priority))
+
+                                    print "Estimated Relevant Documents:", estimated_remaining_relevant_documnets
+                                    # updating batc_size since we might not use 25 since we are performing sample with replacement
+                                    batch_size = len(unique_document_id_list)
+                                else:
+                                    batch_counter = 0
+                                    while not queue.empty():
+                                        if train_size_controller == size_limit:
+                                            break
+                                        item = queue.get()
+                                        # print len(item)
+                                        # print item.priority, item.index
+                                        isPredictable[item.index] = 0  # not predictable
+                                        if correction == True:
+                                            correctionWeight = item.priority / sumForCorrection
+                                            # correctedList = [x / correctionWeight for x in initial_X_test[item.index]]
+                                            unmodified_train_X.append(initial_X_test[item.index])
+                                            sampling_weight.append(correctionWeight)
+                                        else:
+                                            unmodified_train_X.append(initial_X_test[item.index])
+                                            sampling_weight.append(1.0)
+
+                                        unmodified_train_y.append(initial_y_test[item.index])
+                                        if int(initial_y_test[item.index]) == 1:
+                                            seed_one_counter = seed_one_counter + 1
+                                        else:
+                                            seed_zero_counter = seed_zero_counter + 1
+
+                                        train_index_list.append(test_index_list[item.index])
+
+                                        loopDocList.append(int(initial_y_test[item.index]))
+                                        train_size_controller = train_size_controller + 1
+                                        # print X_train.append(X_test.pop(item.priority))
 
                             if protocol == 'SPL':
                                 print "####SPL####"
@@ -1283,7 +1355,8 @@ for test_size in test_size_set:
                             topic_initial_X_train[topic] = unmodified_train_X
                             topic_initial_Y_train[topic] = unmodified_train_y
                             topic_seed_one_counter[topic] =  topic_seed_one_counter[topic] + seed_one_counter
-                            topic_estimated_one_counter[topic] = estimated_remaining_documnets # it is only update no increment
+                            topic_estimated_one_counter[topic] = estimated_remaining_relevant_documnets # it is only update no increment
+                            topic_estimated_zero_counter[topic] = estimated_remaining_non_relevant_documnets
                             topic_seed_zero_counter[topic] =  topic_seed_zero_counter[topic] + seed_zero_counter
                             topic_seed_counter[topic] = topic_seed_counter[topic] + seed_one_counter + seed_zero_counter
                             topic_train_index_list[topic] = train_index_list
@@ -1308,10 +1381,14 @@ for test_size in test_size_set:
                             else:  # alpha_param == 2
                                 alpha = 1.0 - ((topic_seed_one_counter[topic] * 1.0) / topic_seed_counter[topic])
                         else:
+                            numerator = topic_seed_one_counter[topic] + topic_estimated_one_counter[topic]
+                            denumerator = topic_seed_one_counter[topic] + topic_estimated_one_counter[topic] + \
+                                          topic_seed_zero_counter[topic] + topic_estimated_zero_counter[topic]
+
                             if alpha_param == 1:
-                                alpha = ((topic_seed_one_counter[topic] * 1.0) / (topic_seed_one_counter[topic] + topic_estimated_one_counter[topic]))
+                                alpha = (numerator*1.0)/denumerator
                             else:  # alpha_param == 2
-                                alpha = 1.0 - ((topic_seed_one_counter[topic] * 1.0) / (topic_seed_one_counter[topic] + topic_estimated_one_counter[topic]))
+                                alpha = 1.0 - ((numerator*1.0)/denumerator)
 
                         beta = 1- ((topic_seed_counter[topic] * 1.0) / total_judged)
                         topic_selection_probability = alpha * lambda_param + beta * (1 - lambda_param)
@@ -1413,10 +1490,14 @@ for test_size in test_size_set:
                             else:  # alpha_param == 2
                                 alpha = 1.0 - ((topic_seed_one_counter[topic] * 1.0) / topic_seed_counter[topic])
                         else:
+                            numerator = topic_seed_one_counter[topic] + topic_estimated_one_counter[topic]
+                            denumerator = topic_seed_one_counter[topic] + topic_estimated_one_counter[topic] + \
+                                          topic_seed_zero_counter[topic] + topic_estimated_zero_counter[topic]
+
                             if alpha_param == 1:
-                                alpha = ((topic_seed_one_counter[topic] * 1.0) / (topic_seed_one_counter[topic] + topic_estimated_one_counter[topic]))
+                                alpha = (numerator * 1.0) / denumerator
                             else:  # alpha_param == 2
-                                alpha = 1.0 - ((topic_seed_one_counter[topic] * 1.0) / (topic_seed_one_counter[topic] + topic_estimated_one_counter[topic]))
+                                alpha = 1.0 - ((numerator * 1.0) / denumerator)
 
                         beta = 1- ((topic_seed_counter[topic] * 1.0) / total_judged)
                         topic_selection_probability = alpha * lambda_param + beta * (1 - lambda_param)
