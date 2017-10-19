@@ -9,9 +9,17 @@ baseAddress = "/media/nahid/Windows8_OS/TREC/"
 
 base_address1 = "/media/nahid/Windows8_OS/TREC/"
 plotAddress =  "/media/nahid/Windows8_OS/TREC/plots/"
-
-
 protocol_list = ['SAL', 'CAL', 'SPL']
+
+ht_estimation = True
+
+if ht_estimation == True:
+    print "TRUE"
+    baseAddress = baseAddress + "estimation/"
+    base_address1 = base_address1 + "estimation/"
+    plotAddress = plotAddress + "estimation/"
+    protocol_list = ['SAL', 'CAL']
+
 #dataset_list = ['WT2013','WT2014']
 dataset_list = ['WT2014', 'WT2013','gov2', 'TREC8']
 ranker_list = ['True', 'False']
@@ -137,16 +145,19 @@ for alpha_param in alpha_list:
 
             auc_SAL = trapz(protocol_result['SAL'], dx=10)
             auc_CAL = trapz(protocol_result['CAL'], dx=10)
-            auc_SPL = trapz(protocol_result['SPL'], dx=10)
+            if ht_estimation == False:
+                auc_SPL = trapz(protocol_result['SPL'], dx=10)
 
-            print auc_SAL, auc_CAL, auc_SPL
+            #print auc_SAL, auc_CAL, auc_SPL
             #exit(0)
 
             print "Equality Check:", len(x_labels_set), len(protocol_result['CAL'])
             plt.plot(x_labels_set, protocol_result['CAL'], '-b', marker='^', label='CAL, AUC:' + str(auc_CAL)[:4],linewidth=2.0)
 
             plt.plot(x_labels_set, protocol_result['SAL'],  '-r', marker='o',  label='SAL, AUC:'+str(auc_SAL)[:4], linewidth=2.0)
-            plt.plot(x_labels_set, protocol_result['SPL'],  '-g', marker = 'D', label='SPL, AUC:'+str(auc_SPL)[:4], linewidth=2.0)
+
+            if ht_estimation == False:
+                plt.plot(x_labels_set, protocol_result['SPL'],  '-g', marker = 'D', label='SPL, AUC:'+str(auc_SPL)[:4], linewidth=2.0)
 
             if var > 16:
                 plt.xlabel('% of human judgments', size = 16)

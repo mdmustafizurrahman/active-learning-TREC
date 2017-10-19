@@ -47,10 +47,11 @@ datasource = 'WT2013'  # can be  dataset = ['TREC8', 'gov2', 'WT']
 protocol = 'SAL'  # 'SAL' can be ['SAL', 'CAL', 'SPL']
 use_ranker = 'True'
 iter_sampling = 'True'
+ht_estimation = 'False'
+
 correction = 'False'
 train_per_centage_flag = 'True'
 deterministic = 'False'
-ht_estimation = 'True'
 lambda_param = 1.0
 alpha_param = 2 # can be 1 or 2, 1 means more emphasize on easy topic, 2 means more emphasize on hard topic
 
@@ -749,7 +750,7 @@ for test_size in test_size_set:
                             sampling_weight.append(1.0)
 
                         # Ranker needs oversampling, but when HTCorrection true we cannot perform oversample
-                        if use_ranker == True and correction == False:
+                        if use_ranker == True and iter_sampling == True:
                             print "Oversampling in the seed list"
                             ros = RandomOverSampler()
                             # ros = RandomUnderSampler()
@@ -1005,7 +1006,7 @@ for test_size in test_size_set:
                                 docNo = docIndex_DocNo[train_index]
                                 human_label_str = human_label_str + str(topic) + " " + str(docNo) + " " + str(y_pred_all[train_index]) + "\n"
                             '''
-                            human_label_location_final = human_label_location + str(budget_limit) + '_human_.txt'
+                            human_label_location_final = huiter_samplingman_label_location + str(budget_limit) + '_human_.txt'
                             text_file = open(human_label_location_final, "a")
                             text_file.write(human_label_str)
                             text_file.close()
