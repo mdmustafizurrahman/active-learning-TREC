@@ -5,11 +5,20 @@ import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
 gs = gridspec.GridSpec(5, 2)
 
+
 baseAddress = "/media/nahid/Windows8_OS/TREC/"
 
 base_address1 = "/media/nahid/Windows8_OS/TREC/"
 plotAddress =  "/media/nahid/Windows8_OS/TREC/plots/"
 protocol_list = ['SAL', 'CAL', 'SPL']
+
+'''
+baseAddress = "/media/nahid/Windows8_OS/estimation/"
+base_address1 = "/media/nahid/Windows8_OS/estimation/"
+plotAddress =  "/media/nahid/Windows8_OS/TREC/plots/"
+protocol_list = ['SAL', 'CAL', 'SPL']
+'''
+
 
 ht_estimation = True
 
@@ -18,7 +27,7 @@ if ht_estimation == True:
     baseAddress = baseAddress + "estimation/"
     base_address1 = base_address1 + "estimation/"
     plotAddress = plotAddress + "estimation/"
-    protocol_list = ['SAL', 'CAL']
+    protocol_list = ['SAL', 'CAL', 'SPL']
 
 #dataset_list = ['WT2013','WT2014']
 dataset_list = ['WT2014', 'WT2013','gov2', 'TREC8']
@@ -62,7 +71,7 @@ for alpha_param in alpha_list:
         for datasource in dataset_list:  # 1
             s=""
             if use_ranker == "True" and iter_sampling == "True":
-                base_address1 = "/media/nahid/Windows8_OS/TREC/"
+                base_address1 = "/media/nahid/Windows8_OS/TREC/estimation/"
             elif use_ranker == "False" and iter_sampling == "True":
                 base_address1 = "/home/nahid/UT_research/clueweb12/complete_result/"
             elif use_ranker=="False" and iter_sampling == "False":
@@ -84,12 +93,16 @@ for alpha_param in alpha_list:
             else:
                 base_address4 = base_address3 + "oversample/"
                 s1 = s1+"w/o Oversampling"
-
+            print base_address4
             base_address4 = base_address4 + str(lambda_param)+"/" + str(alpha_param) + "/"
             training_variation = []
             for seed in seed_size: # 2
                 for batch in batch_size: # 3
                     for protocol in protocol_list: #4
+
+                            if protocol == 'SPL':
+                                base_address4 = "/media/nahid/Windows8_OS/TREC/"+str(datasource)+"/result/ranker/oversample/"+ str(lambda_param)+"/" + str(alpha_param) + "/"
+
                             print "Dataset", datasource,"Protocol", protocol, "Seed", seed,"Batch", batch
                             s = "Dataset:"+ str(datasource)+", Seed:" + str(seed) + ", Batch:"+ str(batch)
 
@@ -145,8 +158,8 @@ for alpha_param in alpha_list:
 
             auc_SAL = trapz(protocol_result['SAL'], dx=10)
             auc_CAL = trapz(protocol_result['CAL'], dx=10)
-            if ht_estimation == False:
-                auc_SPL = trapz(protocol_result['SPL'], dx=10)
+            #if ht_estimation == False:
+            auc_SPL = trapz(protocol_result['SPL'], dx=10)
 
             #print auc_SAL, auc_CAL, auc_SPL
             #exit(0)
@@ -156,8 +169,8 @@ for alpha_param in alpha_list:
 
             plt.plot(x_labels_set, protocol_result['SAL'],  '-r', marker='o',  label='SAL, AUC:'+str(auc_SAL)[:4], linewidth=2.0)
 
-            if ht_estimation == False:
-                plt.plot(x_labels_set, protocol_result['SPL'],  '-g', marker = 'D', label='SPL, AUC:'+str(auc_SPL)[:4], linewidth=2.0)
+            #if ht_estimation == False:
+            plt.plot(x_labels_set, protocol_result['SPL'],  '-g', marker = 'D', label='SPL, AUC:'+str(auc_SPL)[:4], linewidth=2.0)
 
             if var > 16:
                 plt.xlabel('% of human judgments', size = 16)
@@ -191,6 +204,6 @@ for alpha_param in alpha_list:
     plt.tight_layout()
 
     #plt.show()
-    plt.savefig(plotAddress+str(alpha_param)+'.pdf', format='pdf')
+    plt.savefig(plotAddress+str(alpha_param)+'_with_SPL.pdf', format='pdf')
 
     #exit(0)

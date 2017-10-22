@@ -9,10 +9,10 @@
 #SBATCH --mail-type=end    # email me when the job finishes
 
 module load python
-python topic_distribution_real_cost_command_line.py TREC8 SAL 0.5 2 &
-python topic_distribution_real_cost_command_line.py TREC8 SAL 0.75 1 &
-python topic_distribution_real_cost_command_line.py TREC8 SAL 0.75 2 &
-python topic_distribution_real_cost_command_line.py TREC8 SAL 1.0 1 &
-python topic_distribution_real_cost_command_line.py TREC8 SAL 1.0 2 &
+python topic_distribution_real_cost_command_line.py TREC8 SPL 0.5 2 &
+python topic_distribution_real_cost_command_line.py TREC8 SPL 0.75 1 &
+python topic_distribution_real_cost_command_line.py TREC8 SPL 0.75 2 &
+python topic_distribution_real_cost_command_line.py TREC8 SPL 1.0 1 &
+python topic_distribution_real_cost_command_line.py TREC8 SPL 1.0 2 &
 
 wait

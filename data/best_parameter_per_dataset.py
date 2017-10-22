@@ -35,6 +35,9 @@ correction = 'False'
 train_per_centage_flag = 'True'
 
 
+ht_estimation = True
+
+
 
 result_location = ''
 counter = 0
@@ -43,6 +46,14 @@ list = []
 protocol_result = {}
 
 base_address1 = "/media/nahid/Windows8_OS/TREC/"
+
+
+if ht_estimation == True:
+    print "TRUE"
+    baseAddress = baseAddress + "estimation/"
+    base_address1 = base_address1 + "estimation/"
+    plotAddress = plotAddress + "estimation/"
+    protocol_list = ['SAL', 'CAL']
 
 for datasource in dataset_list:  # 1
     best_AUC = 0.0
@@ -116,14 +127,24 @@ for datasource in dataset_list:  # 1
             #print len(training_variation)
             auc_SAL = trapz(protocol_result['SAL'], dx=10)
             auc_CAL = trapz(protocol_result['CAL'], dx=10)
-            auc_SPL = trapz(protocol_result['SPL'], dx=10)
+            if ht_estimation == False:
+                auc_SPL = trapz(protocol_result['SPL'], dx=10)
 
             #print auc_SAL, auc_CAL, auc_SPL
-            protocol_names = ['CAL', 'SAL', 'SPL']
-            max_AUC = max(auc_CAL, auc_SAL, auc_SPL)
-            import numpy as np
-            max_index = np.argmax([auc_CAL, auc_SAL, auc_SPL])
-            max_protocol_name = protocol_names[max_index]
+
+            if ht_estimation == False:
+                protocol_names = ['CAL', 'SAL', 'SPL']
+                max_AUC = max(auc_CAL, auc_SAL, auc_SPL)
+                import numpy as np
+                max_index = np.argmax([auc_CAL, auc_SAL, auc_SPL])
+                max_protocol_name = protocol_names[max_index]
+            else:
+                protocol_names = ['CAL', 'SAL']
+                max_AUC = max(auc_CAL, auc_SAL)
+                import numpy as np
+
+                max_index = np.argmax([auc_CAL, auc_SAL])
+                max_protocol_name = protocol_names[max_index]
 
             if max_AUC > best_AUC:
                 best_AUC = max_AUC

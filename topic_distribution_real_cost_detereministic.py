@@ -16,6 +16,7 @@ from sklearn.metrics import recall_score
 #from sklearn.metrics import
 from sklearn.linear_model import LogisticRegression
 import collections
+import time
 
 compare = lambda x, y: collections.Counter(x) == collections.Counter(y)
 import pickle
@@ -46,12 +47,12 @@ train_per_centage_flag = sys.argv[6]
 datasource = 'WT2013'  # can be  dataset = ['TREC8', 'gov2', 'WT']
 protocol = 'SAL'  # 'SAL' can be ['SAL', 'CAL', 'SPL']
 use_ranker = 'True'
-iter_sampling = 'True'
+iter_sampling = 'False'
 ht_estimation = 'False'
 
 correction = 'False'
 train_per_centage_flag = 'True'
-deterministic = 'False'
+deterministic = 'True'
 lambda_param = 1.0
 alpha_param = 2 # can be 1 or 2, 1 means more emphasize on easy topic, 2 means more emphasize on hard topic
 
@@ -483,6 +484,7 @@ for test_size in test_size_set:
     seed = 1335
     for fold in xrange(1,2):
         np.random.seed(seed)
+        #np.random.seed(time.time())
         seed = seed + fold
         result_location = base_address + 'result_protocol:' + protocol + '_batch:' + str(batch_size) + '_seed:' + str(n_labeled) +'_fold'+str(fold)+ '.txt'
         predicted_location = base_address + 'prediction_protocol:' + protocol + '_batch:' + str(batch_size) + '_seed:' + str(n_labeled) +'_fold'+str(fold)+ '.txt'
@@ -559,10 +561,18 @@ for test_size in test_size_set:
                     topic = indexToTopicId[sample_topic_list.index(1)]
                 else:
                     print "Deterministic"
-                    sample_topic_list = deterministic_topic_sample_number%topicUsedListIndex
-                    topic = indexToTopicId[sample_topic_list]
-                    deterministic_topic_sample_number = deterministic_topic_sample_number + 1
+                    #Deterministic
+                    #sample_topic_list = deterministic_topic_sample_number%topicUsedListIndex
+                    #topic = indexToTopicId[sample_topic_list]
+                    #deterministic_topic_sample_number = deterministic_topic_sample_number + 1
 
+                    print "Sampling topic from a random uniform distribution"
+                    # uniform distribution
+                    uniformDistribution = [1.0/topicUsedListIndex]*topicUsedListIndex
+                    print uniformDistribution
+
+                    sample_topic_list = np.random.multinomial(1, uniformDistribution, size=1)[0].tolist()
+                    topic = indexToTopicId[sample_topic_list.index(1)]
 
                 print "Sampled Topic:", topic
                 #number_of_samples = number_of_samples + 1
@@ -1468,10 +1478,10 @@ for test_size in test_size_set:
 
                     #################
 
-                    if deterministic == True:
-                        topicIndexNumber = sample_topic_list
-                    else:
-                        topicIndexNumber = sample_topic_list.index(1) # this is topic index (0,1,...,48) not topic number (401, ...450)
+                    #if deterministic == True:
+                    #    topicIndexNumber = sample_topic_list
+                    #else:
+                    topicIndexNumber = sample_topic_list.index(1) # this is topic index (0,1,...,48) not topic number (401, ...450)
 
                     topic_complete_list[topicIndexNumber] = 1 # topic is complete ,so mark it as 1
 

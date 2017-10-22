@@ -1,27 +1,29 @@
 import sys
 
-
+'''
 dataset = ['WT2013', 'WT2014']
-variation = 41 # dataset WT 2013 and WT 2014 starts at 61 and we need 10 processor per job
+variation = 21 # dataset WT 2013 and WT 2014 starts at 61 and we need 10 processor per job
 mod = 10
 filename1 = '/home/nahid/PycharmProjects/parser/scriptestimation/batch_command_WT.sh'
-
+'''
 
 '''
 dataset = ['gov2']
-variation = 21 # dataset gov2 starts at 31 and we need 3 processor per job
+variation = 11 # dataset gov2 starts at 31 and we need 3 processor per job
 mod = 10
 filename1 = '/home/nahid/PycharmProjects/parser/scriptestimation/batch_command_gov2.sh'
 '''
 
-'''
+
 dataset = ['TREC8']
 variation = 1 # dataset starts at 1 and we need 2 processor per job
 mod = 5
 filename1 = '/home/nahid/PycharmProjects/parser/scriptestimation/batch_command_TREC8.sh'
-'''
 
-protocol_list = ['SAL', 'CAL']
+
+#protocol_list = ['SAL', 'CAL']
+protocol_list = ['SPL']
+
 lambda_list = [0.0, 0.25, 0.50, 0.75, 1.0]
 alpha_list = [1, 2]
 

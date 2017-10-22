@@ -1,4 +1,3 @@
 #!/bin/sh
 
-sbatch activeJobTREC30
-sbatch activeJobTREC40
+sbatch activeJobTREC20

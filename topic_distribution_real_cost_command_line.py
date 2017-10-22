@@ -46,15 +46,18 @@ correction = sys.argv[5] #'SAL' can be ['SAL', 'CAL', 'SPL']
 train_per_centage_flag = sys.argv[6]
 '''
 
-#parameter set # all FLAGS must be string
-#datasource = 'gov2'  # can be  dataset = ['TREC8', 'gov2', 'WT']
-#protocol = 'CAL'  # 'SAL' can be ['SAL', 'CAL', 'SPL']
-use_ranker = 'True'
-iter_sampling = 'True'
-correction = 'False'
-train_per_centage_flag = 'True'
-deterministic = 'False' # this is hard coded and does not take as an input from command line
-ht_estimation = 'True'
+
+# if deterministic is False then HT estimation have to True or Vice Versa
+# Here deterministic = True means we sample a topic from a uniform distribution
+deterministic = 'True' # this is hard coded and does not take as an input from command line
+ht_estimation = 'False'
+
+
+##############################
+iter_sampling = 'False' # mean oversampling in active itearation phase
+use_ranker = 'True' # Now we always use Ranker so keep it fixed at True
+correction = 'False' # not used anymore but keep it fixed at Fasle
+train_per_centage_flag = 'True' # not used anymore but keep it fixed at True
 
 #lambda_param = 0.5
 #alpha_param = 2 # can be 1 or 2, 1 means more emphasize on easy topic, 2 means more emphasize on hard topic
@@ -123,6 +126,7 @@ if iter_sampling == 'True':
     iter_sampling = True
 if iter_sampling == 'False':
     iter_sampling = False
+    base_address = base_address + "oversample/"
 if correction == 'True':
     base_address = base_address + "htcorrection/"
     correction = True
@@ -566,9 +570,18 @@ for test_size in test_size_set:
                     topic = indexToTopicId[sample_topic_list.index(1)]
                 else:
                     print "Deterministic"
-                    sample_topic_list = deterministic_topic_sample_number % topicUsedListIndex
-                    topic = indexToTopicId[sample_topic_list]
-                    deterministic_topic_sample_number = deterministic_topic_sample_number + 1
+                    # Deterministic
+                    # sample_topic_list = deterministic_topic_sample_number%topicUsedListIndex
+                    # topic = indexToTopicId[sample_topic_list]
+                    # deterministic_topic_sample_number = deterministic_topic_sample_number + 1
+
+                    print "Sampling topic from a random uniform distribution"
+                    # uniform distribution
+                    uniformDistribution = [1.0 / topicUsedListIndex] * topicUsedListIndex
+                    print uniformDistribution
+
+                    sample_topic_list = np.random.multinomial(1, uniformDistribution, size=1)[0].tolist()
+                    topic = indexToTopicId[sample_topic_list.index(1)]
 
                 print "Sampled Topic:", topic
                 #number_of_samples = number_of_samples + 1
@@ -755,7 +768,7 @@ for test_size in test_size_set:
                             sampling_weight.append(1.0)
 
                         # Ranker needs oversampling, but when HTCorrection true we cannot perform oversample
-                        if use_ranker == True and correction == False:
+                        if use_ranker == True and iter_sampling == True:
                             print "Oversampling in the seed list"
                             ros = RandomOverSampler()
                             # ros = RandomUnderSampler()
@@ -1480,10 +1493,10 @@ for test_size in test_size_set:
 
 
 
-                    if deterministic == True:
-                        topicIndexNumber = sample_topic_list
-                    else:
-                        topicIndexNumber = sample_topic_list.index(1) # this is topic index (0,1,...,48) not topic number (401, ...450)
+                    #if deterministic == True:
+                    #    topicIndexNumber = sample_topic_list
+                    #else:
+                    topicIndexNumber = sample_topic_list.index(1) # this is topic index (0,1,...,48) not topic number (401, ...450)
 
                     topic_complete_list[topicIndexNumber] = 1 # topic is complete ,so mark it as 1
 
