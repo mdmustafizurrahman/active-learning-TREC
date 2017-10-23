@@ -49,20 +49,22 @@ base_address1 = "/media/nahid/Windows8_OS/TREC/"
 
 
 if ht_estimation == True:
-    print "TRUE"
+    #print "TRUE"
     base_address1 = base_address1 + "estimation/"
     plotAddress = plotAddress + "estimation/"
-    protocol_list = ['SAL', 'CAL', 'SPL']
+    protocol_list = ['CAL', 'SAL', 'SPL']
 
-for datasource in dataset_list:  # 1
+for alpha_param in alpha_list:
     best_AUC = 0.0
     best_protocol = ''
     best_lambda = -1.0
     best_alpha = 0
-    for alpha_param in alpha_list:
+    for lambda_param in lambda_list:
         fig, ax = plt.subplots(nrows=5, ncols=4, figsize=(20, 15))
         var = 1
-        for lambda_param in lambda_list:
+        print "$\\alpha$ = ", str(alpha_param),", \& $\lambda$ = ", str(lambda_param),
+        for datasource in dataset_list:  # 1
+
             base_address2 = base_address1 + str(datasource) + "/"
             base_address2 = base_address2 + "result/"
             if use_ranker == 'True':
@@ -124,9 +126,12 @@ for datasource in dataset_list:  # 1
 
 
             #print len(training_variation)
-            auc_SAL = trapz(protocol_result['SAL'], dx=10)
-            auc_CAL = trapz(protocol_result['CAL'], dx=10)
-            auc_SPL = trapz(protocol_result['SPL'], dx=10)
+            auc_SAL = str(trapz(protocol_result['SAL'], dx=10))[:5]
+            auc_CAL = str(trapz(protocol_result['CAL'], dx=10))[:5]
+            auc_SPL = str(trapz(protocol_result['SPL'], dx=10))[:5]
+
+
+            print "&", auc_CAL, "&", auc_SAL, "&", auc_SPL,
 
             #print auc_SAL, auc_CAL, auc_SPL
 
@@ -141,6 +146,7 @@ for datasource in dataset_list:  # 1
                 best_alpha = alpha_param
                 best_lambda = lambda_param
                 best_protocol = max_protocol_name
+        print "\\\\ \n"
 
 
 
@@ -148,4 +154,4 @@ for datasource in dataset_list:  # 1
 
 
 
-    print "Datasource:", datasource, "best AUC:", best_AUC, "best_alpha:", best_alpha, "best_lambda:", best_lambda, "best_protocol:", best_protocol
+    #print "Datasource:", datasource, "best AUC:", best_AUC, "best_alpha:", best_alpha, "best_lambda:", best_lambda, "best_protocol:", best_protocol

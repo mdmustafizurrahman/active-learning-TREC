@@ -6,30 +6,35 @@ import matplotlib.gridspec as gridspec
 gs = gridspec.GridSpec(5, 2)
 
 
-baseAddress = "/media/nahid/Windows8_OS/TREC/"
 
 base_address1 = "/media/nahid/Windows8_OS/TREC/"
 plotAddress =  "/media/nahid/Windows8_OS/TREC/plots/"
 protocol_list = ['SAL', 'CAL', 'SPL']
 
 '''
-baseAddress = "/media/nahid/Windows8_OS/estimation/"
 base_address1 = "/media/nahid/Windows8_OS/estimation/"
 plotAddress =  "/media/nahid/Windows8_OS/TREC/plots/"
 protocol_list = ['SAL', 'CAL', 'SPL']
 '''
 
-
 ht_estimation = True
+uniform_sampling = False # uniform topic sampling
+
+lambda_list = [0.0, 0.25, 0.50, 0.75, 1.0]
+alpha_list = [1, 2]
 
 if ht_estimation == True:
     print "TRUE"
-    baseAddress = baseAddress + "estimation/"
     base_address1 = base_address1 + "estimation/"
     plotAddress = plotAddress + "estimation/"
-    protocol_list = ['SAL', 'CAL', 'SPL']
 
-#dataset_list = ['WT2013','WT2014']
+if uniform_sampling == True:
+    base_address1 = base_address1 + "UniformTopicSPL/"
+    plotAddress = plotAddress + "UniformTopicSPL/"
+    lambda_list = [0.0]
+    alpha_list = [1]
+
+protocol_list = ['SAL', 'CAL', 'SPL']
 dataset_list = ['WT2014', 'WT2013','gov2', 'TREC8']
 ranker_list = ['True', 'False']
 sampling_list = ['True','False']
@@ -40,8 +45,7 @@ x_labels_set_name = ['0%','10%','20%','30%','40%','50%','60%','70%','80%','90%',
 x_labels_set =[10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 linestyles = ['_', '-', '--', ':']
 
-lambda_list = [0.0, 0.25, 0.50, 0.75, 1.0]
-alpha_list = [1, 2]
+
 n_labeled =  10 #50      # number of samples that are initially labeled
 seed_size =  [10] #50      # number of samples that are initially labeled
 batch_size = [25] #50
@@ -51,18 +55,11 @@ iter_sampling = 'True'
 correction = 'False'
 train_per_centage_flag = 'True'
 
-
-
 result_location = ''
 counter = 0
 missing = 0
 list = []
 protocol_result = {}
-#subplot_loc = [521, 522, 523, 524,525, 526, 527, 528, 529]
-#subplot_loc = [331, 332, 333, 334,335, 336, 337, 338, 339]
-#subplot_loc = [411,412,413,414, 421,422,423,424, 431, 432, 433, 434, 441, 442, 443, 444]
-#subplot_loc = [441, 442, 443, 444, 445, 446, 447, 448, 449, 4410, 4411, 4412, 4413, 4414, 4415, 4416]
-
 
 for alpha_param in alpha_list:
     fig, ax = plt.subplots(nrows=5, ncols=4, figsize=(20, 15))
@@ -70,14 +67,7 @@ for alpha_param in alpha_list:
     for lambda_param in lambda_list:
         for datasource in dataset_list:  # 1
             s=""
-            if use_ranker == "True" and iter_sampling == "True":
-                base_address1 = "/media/nahid/Windows8_OS/TREC/estimation/"
-            elif use_ranker == "False" and iter_sampling == "True":
-                base_address1 = "/home/nahid/UT_research/clueweb12/complete_result/"
-            elif use_ranker=="False" and iter_sampling == "False":
-                base_address1 = "/home/nahid/UT_research/clueweb12/nooversample_result/"
-            else:
-                continue
+
         for datasource in dataset_list: # 1
             base_address2 = base_address1 + str(datasource) + "/"
             base_address2 = base_address2 + "result/"
@@ -100,8 +90,8 @@ for alpha_param in alpha_list:
                 for batch in batch_size: # 3
                     for protocol in protocol_list: #4
 
-                            if protocol == 'SPL':
-                                base_address4 = "/media/nahid/Windows8_OS/TREC/"+str(datasource)+"/result/ranker/oversample/"+ str(lambda_param)+"/" + str(alpha_param) + "/"
+                            #if protocol == 'SPL':
+                            #    base_address4 = "/media/nahid/Windows8_OS/TREC/"+str(datasource)+"/result/ranker/oversample/"+ str(lambda_param)+"/" + str(alpha_param) + "/"
 
                             print "Dataset", datasource,"Protocol", protocol, "Seed", seed,"Batch", batch
                             s = "Dataset:"+ str(datasource)+", Seed:" + str(seed) + ", Batch:"+ str(batch)
@@ -165,12 +155,12 @@ for alpha_param in alpha_list:
             #exit(0)
 
             print "Equality Check:", len(x_labels_set), len(protocol_result['CAL'])
-            plt.plot(x_labels_set, protocol_result['CAL'], '-b', marker='^', label='CAL, AUC:' + str(auc_CAL)[:4],linewidth=2.0)
+            plt.plot(x_labels_set, protocol_result['CAL'], '-b', marker='^', label='CAL, AUC:' + str(auc_CAL)[:5],linewidth=2.0)
 
-            plt.plot(x_labels_set, protocol_result['SAL'],  '-r', marker='o',  label='SAL, AUC:'+str(auc_SAL)[:4], linewidth=2.0)
+            plt.plot(x_labels_set, protocol_result['SAL'],  '-r', marker='o',  label='SAL, AUC:'+str(auc_SAL)[:5], linewidth=2.0)
 
             #if ht_estimation == False:
-            plt.plot(x_labels_set, protocol_result['SPL'],  '-g', marker = 'D', label='SPL, AUC:'+str(auc_SPL)[:4], linewidth=2.0)
+            plt.plot(x_labels_set, protocol_result['SPL'],  '-g', marker = 'D', label='SPL, AUC:'+str(auc_SPL)[:5], linewidth=2.0)
 
             if var > 16:
                 plt.xlabel('% of human judgments', size = 16)
@@ -204,6 +194,6 @@ for alpha_param in alpha_list:
     plt.tight_layout()
 
     #plt.show()
-    plt.savefig(plotAddress+str(alpha_param)+'_with_SPL.pdf', format='pdf')
+    plt.savefig(plotAddress+str(alpha_param)+'_with_complete_SPL.pdf', format='pdf')
 
     #exit(0)

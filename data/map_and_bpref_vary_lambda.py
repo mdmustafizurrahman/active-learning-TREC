@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
 gs = gridspec.GridSpec(5, 2)
 
-os.chdir('/home/nahid/Downloads/trec_eval.9.0/')
+os.chdir('/media/nahid/Windows8_OS/UbuntuDownloads/trec_eval.9.0/')
 
 #base_address1 = "/home/nahid/UT_research/clueweb12/bpref_result/"
 #plotAddress = "/home/nahid/UT_research/clueweb12/bpref_result/plots/tau/mapbpref/"
@@ -15,13 +15,22 @@ os.chdir('/home/nahid/Downloads/trec_eval.9.0/')
 base_address1 = "/media/nahid/Windows8_OS/TREC/"
 plotAddress =  "/media/nahid/Windows8_OS/TREC/plots/"
 
+ht_estimation = True
+
+if ht_estimation == True:
+    print "TRUE"
+    base_address1 = base_address1 + "estimation/"
+    plotAddress = plotAddress + "estimation/"
+
 
 protocol_list = ['SAL','CAL', 'SPL']
 #dataset_list = ['gov2']
 #map_list = ['map']
 #map_list = ['bpref']
 
-dataset_list = ['WT2014', 'WT2013','gov2','TREC8']
+dataset_list = ['WT2014','WT2013', 'gov2','TREC8']
+#dataset_list = ['WT2014']
+
 ranker_list = ['True']
 sampling_list = ['True']
 map_list = ['map', 'bpref']
@@ -35,8 +44,7 @@ x_labels_set_name = ['0%','10%','20%','30%','40%','50%','60%','70%','80%','90%',
 #x_labels_set =[0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
 x_labels_set =[10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 #x_labels_set =[10,20]
-lambda_param = 0.75
-alpha_param = 1
+
 
 
 result_location = ''
@@ -72,6 +80,11 @@ for stringUse in map_list:
                     predictionAddress = "/media/nahid/Windows8_OS/finalDownlaod/TREC/gov2/prediction/"
                     predictionModifiedAddress = "/media/nahid/Windows8_OS/finalDownlaod/TREC/gov2/modifiedprediction/"
                     alpha_param = 1
+                    train_per_centage = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9,
+                                         1.0,]  # skiping seed part which is named as 0.1
+                    lambda_param = 0.5
+                    alpha_param = 2
+
                 elif datasource == 'TREC8':
                     originAdress = "/media/nahid/Windows8_OS/unzippedsystemRanking/" + datasource + "/"
                     qrelAdress = '/media/nahid/Windows8_OS/finalDownlaod/TREC/TREC8/relevance.txt'
@@ -79,7 +92,11 @@ for stringUse in map_list:
                     destinationBase = "/media/nahid/Windows8_OS/modifiedSystemRanking/" + datasource + "/"
                     predictionAddress = "/media/nahid/Windows8_OS/finalDownlaod/TREC/TREC8/prediction/"
                     predictionModifiedAddress = "/media/nahid/Windows8_OS/finalDownlaod/TREC/TREC8/modifiedprediction/"
+                    lambda_param = 0.25
                     alpha_param = 1
+                    train_per_centage = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9,
+                                         1.0, ]  # skiping seed part which is named as 0.1
+
                 elif datasource == 'WT2013':
                     originAdress = "/media/nahid/Windows8_OS/unzippedsystemRanking/" + datasource + "/"
                     qrelAdress = '/media/nahid/Windows8_OS/finalDownlaod/TREC/WT2013/modified_qreldocs2013.txt'
@@ -87,7 +104,11 @@ for stringUse in map_list:
                     destinationBase = "/media/nahid/Windows8_OS/modifiedSystemRanking/" + datasource + "/"
                     predictionAddress = "/media/nahid/Windows8_OS/finalDownlaod/TREC/WT2013/prediction/"
                     predictionModifiedAddress = "/media/nahid/Windows8_OS/finalDownlaod/TREC/WT2013/modifiedprediction/"
+                    lambda_param = 1.0
                     alpha_param = 2
+                    train_per_centage = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9,
+                                         1.0, ]  # skiping seed part which is named as 0.1
+
 
                 else:
                     originAdress = "/media/nahid/Windows8_OS/unzippedsystemRanking/" + datasource + "/"
@@ -100,6 +121,7 @@ for stringUse in map_list:
                                          1.0, 1.1]  # skiping seed part which is named as 0.1
 
                     alpha_param = 2
+                    lambda_param = 0.75
 
                 print "Original Part"
 
@@ -177,6 +199,7 @@ for stringUse in map_list:
                                 predicted_location_base = base_address4 + 'prediction_protocol:' + protocol + '_batch:' + str(
                                     batch) + '_seed:' + str(seed) + '_fold' + str(fold) + '_'
                                 for percentage in train_per_centage:
+
                                     '''
                                     predictionQrel = ""
                                     if stringUse == 'bpref':
@@ -233,9 +256,9 @@ for stringUse in map_list:
                                     text_file.write(tmp)
                                     text_file.close()
 
-
-                                    #####################
                                     '''
+                                    #####################
+
 
                                     predictedqrelMap = []
 
@@ -289,20 +312,21 @@ for stringUse in map_list:
                 plt.ylim([0.7, 1])
                 plt.yticks([0.7, 0.8, .9, 1.0])
                 plt.legend(loc=4)
+                param = "($\\alpha$ = " + str(alpha_param) + ", $\lambda$ = " + str(lambda_param) + ")"
                 if datasource == 'gov2':
-                    plt.title('TB\'06', size=16)
+                    plt.title('TB\'06 ' + param, size=16)
                 elif datasource == 'WT2013':
-                    plt.title('WT\'13', size=16)
+                    plt.title('WT\'13 ' + param, size=16)
                 elif datasource == 'WT2014':
-                    plt.title('WT\'14', size=16)
+                    plt.title('WT\'14 ' + param, size=16)
                 else:
-                    plt.title('Adhoc\'99', size=16)
+                    plt.title('Adhoc\'99 ' + param, size=16)
                 plt.grid()
                 var = var + 1
 
 #plt.suptitle(s1, size=16)
 plt.tight_layout()
-plt.savefig(plotAddress + s1 + 'map2.pdf', format='pdf')
+plt.savefig(plotAddress + s1 + 'map_new_HT.pdf', format='pdf')
 
 
 
