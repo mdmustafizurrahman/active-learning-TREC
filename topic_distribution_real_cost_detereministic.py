@@ -44,16 +44,18 @@ train_per_centage_flag = sys.argv[6]
 '''
 
 #parameter set # all FLAGS must be string
-datasource = 'WT2013'  # can be  dataset = ['TREC8', 'gov2', 'WT']
-protocol = 'SAL'  # 'SAL' can be ['SAL', 'CAL', 'SPL']
+datasource = 'WT2014'  # can be  dataset = ['TREC8', 'gov2', 'WT']
+protocol = 'SPL'  # 'SAL' can be ['SAL', 'CAL', 'SPL']
 use_ranker = 'True'
 iter_sampling = 'False'
-ht_estimation = 'False'
+ht_estimation = 'True'
+deterministic = 'False'
+
 
 correction = 'False'
 train_per_centage_flag = 'True'
-deterministic = 'True'
-lambda_param = 1.0
+
+lambda_param = 0.25
 alpha_param = 2 # can be 1 or 2, 1 means more emphasize on easy topic, 2 means more emphasize on hard topic
 
 print "Ranker_use", use_ranker
@@ -94,13 +96,13 @@ base_address = "/media/nahid/Windows8_OS/clueweb12/topic_dist/"
 
 if deterministic == 'True':
     deterministic = True
-    base_address = "/media/nahid/Windows8_OS/clueweb12/topic_dist/deterministic/"
+    base_address = "/media/nahid/Windows8_OS/clueweb12/topic_dist/roundrobin/"
 else:
     deterministic = False
 
 if ht_estimation == 'True':
     ht_estimation = True
-    base_address = "/media/nahid/Windows8_OS/clueweb12/topic_dist/estimation/"
+    base_address = "/media/nahid/Windows8_OS/clueweb12/topic_dist/estimationHTSPL/"
 else:
     ht_estimation = False
 
@@ -108,7 +110,7 @@ if deterministic == True and ht_estimation == True:
     print("Bothe deterministic and htestimation parameter cannot be true")
     exit(-1)
 
-base_address = base_address +str(datasource)+"/"
+base_address = base_address +str(datasource)+"/result/"
 if use_ranker == 'True':
     base_address = base_address + "ranker/"
     use_ranker = True
@@ -120,6 +122,7 @@ if iter_sampling == 'True':
     iter_sampling = True
 if iter_sampling == 'False':
     iter_sampling = False
+    base_address = base_address + "oversample/"
 if correction == 'True':
     base_address = base_address + "htcorrection/"
     correction = True
@@ -131,7 +134,7 @@ if train_per_centage_flag == 'True':
 else:
     train_per_centage_flag = False
 
-
+base_address = base_address + str(lambda_param) + "/" + str(alpha_param) + "/"
 print "base address:", base_address
 
 if iter_sampling == True and correction == True:
@@ -560,19 +563,18 @@ for test_size in test_size_set:
                     sample_topic_list = np.random.multinomial(1, normalized_topic_distribution, size=1)[0].tolist()
                     topic = indexToTopicId[sample_topic_list.index(1)]
                 else:
-                    print "Deterministic"
-                    #Deterministic
-                    #sample_topic_list = deterministic_topic_sample_number%topicUsedListIndex
-                    #topic = indexToTopicId[sample_topic_list]
-                    #deterministic_topic_sample_number = deterministic_topic_sample_number + 1
+                    print "Round Robin topics selection one by one topic"
+                    sample_topic_list = deterministic_topic_sample_number%topicUsedListIndex
+                    topic = indexToTopicId[sample_topic_list]
+                    deterministic_topic_sample_number = deterministic_topic_sample_number + 1
 
-                    print "Sampling topic from a random uniform distribution"
+                    #print "Sampling topic from a random uniform distribution"
                     # uniform distribution
-                    uniformDistribution = [1.0/topicUsedListIndex]*topicUsedListIndex
-                    print uniformDistribution
+                    #uniformDistribution = [1.0/topicUsedListIndex]*topicUsedListIndex
+                    #print uniformDistribution
 
-                    sample_topic_list = np.random.multinomial(1, uniformDistribution, size=1)[0].tolist()
-                    topic = indexToTopicId[sample_topic_list.index(1)]
+                    #sample_topic_list = np.random.multinomial(1, uniformDistribution, size=1)[0].tolist()
+                    #topic = indexToTopicId[sample_topic_list.index(1)]
 
                 print "Sampled Topic:", topic
                 #number_of_samples = number_of_samples + 1
@@ -1113,7 +1115,8 @@ for test_size in test_size_set:
                                         elementsIndex.append(counter)
                                         elementsLabel.append(initial_y_test[counter])
 
-                                if ht_estimation == True:
+                                if ht_estimation == True or deterministic == True:
+                                    print "Deterministic:", deterministic, "Inside CAL"
                                     normalized_element_probability = [float(elem_prob) / sum(elementsProbability) for
                                                                      elem_prob in
                                                                      elementsProbability]
@@ -1226,7 +1229,8 @@ for test_size in test_size_set:
                                         elementsIndex.append(counter)
                                         elementsLabel.append(initial_y_test[counter])
 
-                                if ht_estimation == True:
+                                if ht_estimation == True or deterministic == True:
+                                    print "Deterministic:", deterministic, "Inside SAL"
                                     normalized_element_probability = [float(elem_prob) / sum(elementsProbability)
                                                                       for
                                                                       elem_prob in
@@ -1318,6 +1322,97 @@ for test_size in test_size_set:
                                         train_size_controller = train_size_controller + 1
                                         # print X_train.append(X_test.pop(item.priority))
 
+                            if protocol == 'SPL': # new SPL with HT correction
+                                print "####SPL####"
+                                queue = Queue.PriorityQueue(queueSize)
+                                numberOfPredictable = 0
+                                for counter in xrange(0, predictableSize):
+                                    if isPredictable[counter] == 1:
+                                        numberOfPredictable = numberOfPredictable + 1
+
+                                equalProbofDocuments = (1.0/numberOfPredictable)*1.0
+                                y_prob = []
+                                counter = 0
+                                sumForCorrection = 0.0
+                                for counter in xrange(0, predictableSize):
+                                    if isPredictable[counter] == 1:
+                                        # reshapping reshape(1,-1) because it does not take one emelemt array
+                                        # list does not contain reshape so we are using np,array
+                                        # model.predit returns two value in index [0] of the list
+                                        queue.put(relevance(equalProbofDocuments, counter))
+                                        elementsProbability.append(equalProbofDocuments)
+                                        elementsIndex.append(counter)
+                                        elementsLabel.append(initial_y_test[counter])
+
+                                if ht_estimation == True or deterministic == True:
+                                    print "Deterministic:", deterministic, "Inside SPL"
+                                    normalized_element_probability = [float(elem_prob) / sum(elementsProbability)
+                                                                      for
+                                                                      elem_prob in
+                                                                      elementsProbability]
+
+                                    # print "normalized element prob:", normalized_element_probability
+                                    sample_document_list = \
+                                        np.random.multinomial(batch_size, normalized_element_probability, size=1)[
+                                            0].tolist()
+
+                                    # print "sample document list:", sample_document_list
+                                    # sample_document_list = [1,0,3] # mean oth index 1 times, second index 3 times
+                                    # so next line check documentValue >= 1
+
+                                    document_id_list = []
+                                    document_id_list = [documentid for documentid, documentvalue in
+                                                        enumerate(sample_document_list) if documentvalue >= 1]
+                                    # calculate inclusion probability only for relevant documents
+                                    # to save compuatation tme
+                                    # print "document id list:", document_id_list
+                                    # unique document list
+                                    unique_document_id_list = []
+                                    unique_document_id_list = list(set(document_id_list))
+                                    # print "unique docs list:", unique_document_id_list
+                                    # document_inclusion_probability = []
+
+
+                                    for documentid in unique_document_id_list:
+                                        # print elementsLabel
+                                        if int(elementsLabel[documentid]) == 1:
+                                            inclusion_prob = 1 - pow((1 - normalized_element_probability[documentid]),
+                                                                     batch_size)
+                                            estimated_remaining_relevant_documnets = estimated_remaining_relevant_documnets + (
+                                            elementsLabel[documentid] / inclusion_prob)
+
+                                        else:
+                                            inclusion_prob = 1 - pow((1 - normalized_element_probability[documentid]),
+                                                                     batch_size)
+                                            estimated_remaining_non_relevant_documnets = estimated_remaining_non_relevant_documnets + (
+                                            elementsLabel[documentid] / inclusion_prob)
+
+                                        itemIndex = elementsIndex[documentid]
+
+                                        isPredictable[itemIndex] = 0  # not predictable
+                                        # initial_X_train.append(initial_X_test[item.index])
+                                        # initial_y_train.append(initial_y_test[item.index])
+
+                                        unmodified_train_X.append(initial_X_test[itemIndex])
+                                        unmodified_train_y.append(initial_y_test[itemIndex])
+
+                                        if int(initial_y_test[itemIndex]) == 1:
+                                            seed_one_counter = seed_one_counter + 1
+                                        else:
+                                            seed_zero_counter = seed_zero_counter + 1
+
+                                        train_index_list.append(test_index_list[itemIndex])
+
+                                        # print "Docs:", initial_X_test[item.index]
+                                        loopDocList.append(int(initial_y_test[itemIndex]))
+                                        train_size_controller = train_size_controller + 1
+                                        # print X_train.append(X_test.pop(item.priority))
+
+                                    print "Estimated Relevant Documents:", estimated_remaining_relevant_documnets
+                                    # updating batc_size since we might not use 25 since we are performing sample with replacement
+                                    batch_size = len(unique_document_id_list)
+
+                            '''
                             if protocol == 'SPL':
                                 print "####SPL####"
                                 randomArray = []
@@ -1350,7 +1445,7 @@ for test_size in test_size_set:
                                     train_index_list.append(test_index_list[itemIndex])
                                     loopDocList.append(int(initial_y_test[itemIndex]))
                                     train_size_controller = train_size_controller + 1
-
+                            '''
                             if iter_sampling == True:
                                 print "Oversampling in the active iteration list"
                                 ros = RandomOverSampler()
@@ -1478,10 +1573,10 @@ for test_size in test_size_set:
 
                     #################
 
-                    #if deterministic == True:
-                    #    topicIndexNumber = sample_topic_list
-                    #else:
-                    topicIndexNumber = sample_topic_list.index(1) # this is topic index (0,1,...,48) not topic number (401, ...450)
+                    if deterministic == True:
+                        topicIndexNumber = sample_topic_list
+                    else:
+                        topicIndexNumber = sample_topic_list.index(1) # this is topic index (0,1,...,48) not topic number (401, ...450)
 
                     topic_complete_list[topicIndexNumber] = 1 # topic is complete ,so mark it as 1
 

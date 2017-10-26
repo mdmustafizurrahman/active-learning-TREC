@@ -105,7 +105,7 @@ for datasource in dataset_list:  # 1
                             #print list
 
                             #if datasource == 'TREC8' or datasource == 'gov2':
-                            list = list[1:11]
+                            list = list[0:10]
                             #list1 = list[1:len(list)]
                             #if use_ranker == "True":
                             #    list1 = list[0:len(list)-2]

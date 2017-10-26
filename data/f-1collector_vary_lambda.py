@@ -17,25 +17,67 @@ plotAddress =  "/media/nahid/Windows8_OS/TREC/plots/"
 protocol_list = ['SAL', 'CAL', 'SPL']
 '''
 
-ht_estimation = True
+ht_estimation = False
 uniform_sampling = False # uniform topic sampling
+deterministic = True
 
 lambda_list = [0.0, 0.25, 0.50, 0.75, 1.0]
 alpha_list = [1, 2]
+number_of_rows = 5
 
+'''# ht_estimation with normal SPL
 if ht_estimation == True:
     print "TRUE"
     base_address1 = base_address1 + "estimation/"
     plotAddress = plotAddress + "estimation/"
+'''
+# ht_estimation with HT Corrected SPL
+if ht_estimation == True:
+    base_address1 = "/media/nahid/Windows8_OS/clueweb12/topic_dist/estimationHTSPL/"
+    plotAddress = "/media/nahid/Windows8_OS/clueweb12/topic_dist/estimationHTSPL/plots/"
+    lambda_list = [0.25]
+    alpha_list = [2]
+    number_of_rows = 1
+    protocol_list = ['SPL', 'CAL', 'SAL']
 
+'''
 if uniform_sampling == True:
     base_address1 = base_address1 + "UniformTopicSPL/"
     plotAddress = plotAddress + "UniformTopicSPL/"
     lambda_list = [0.0]
     alpha_list = [1]
+'''
+
+if uniform_sampling == True:
+    base_address1 = "/media/nahid/Windows8_OS/random2/"
+    plotAddress = "/media/nahid/Windows8_OS/random2/plots/"
+    lambda_list = [0.0]
+    alpha_list = [1]
+    number_of_rows = 1
+
+'''
+# roundrobin with normal SPL
+if deterministic == True:
+    base_address1 = "/media/nahid/Windows8_OS/roundrobinBasicSPL/deterministic/"
+    plotAddress = "/media/nahid/Windows8_OS/roundrobinBasicSPL/plots/"
+    lambda_list = [0.0]
+    alpha_list = [1]
+    number_of_rows = 1
+'''
+
+# roundrobin with HT SPL
+if deterministic == True:
+    base_address1 = "/media/nahid/Windows8_OS/roundrobinHTSPL/deterministicHTSPL/"
+    plotAddress = "/media/nahid/Windows8_OS/roundrobinHTSPL/plots/"
+    lambda_list = [0.0]
+    alpha_list = [1]
+    number_of_rows = 1
+
 
 protocol_list = ['SAL', 'CAL', 'SPL']
-dataset_list = ['WT2014', 'WT2013','gov2', 'TREC8']
+dataset_list = ['WT2014', 'WT2013']
+#dataset_list = ['WT2014']
+#protocol_list = ['SL', 'CAL', 'SAL']
 ranker_list = ['True', 'False']
 sampling_list = ['True','False']
 train_per_centage_flag = 'True'
@@ -62,7 +104,7 @@ list = []
 protocol_result = {}
 
 for alpha_param in alpha_list:
-    fig, ax = plt.subplots(nrows=5, ncols=4, figsize=(20, 15))
+    fig, ax = plt.subplots(nrows=number_of_rows, ncols=4, figsize=(20, 5))
     var = 1
     for lambda_param in lambda_list:
         for datasource in dataset_list:  # 1
@@ -123,6 +165,9 @@ for alpha_param in alpha_list:
                             #else:
                             #    list1 = list[1:len(list)]
                             #print length
+                            auc_SAL = trapz(list, dx=10)
+                            print auc_SAL
+
                             counter = 0
                             protocol_result[protocol] = list
                             if protocol == 'SAL':
@@ -136,7 +181,7 @@ for alpha_param in alpha_list:
             #plt.figure(var)
             print len(training_variation)
             #plt.subplot(subplot_loc[var])
-            plt.subplot(5,4, var)
+            plt.subplot(number_of_rows,4, var)
             '''plt.plot(x_labels_set, protocol_result['SAL'], '-r', label='SAL',linewidth=2.0)
             plt.plot(x_labels_set, protocol_result['CAL'], '-b', label = 'CAL',linewidth=2.0)
             plt.plot(x_labels_set, protocol_result['SPL'], '-g', label= 'SPL',linewidth=2.0)
@@ -147,6 +192,7 @@ for alpha_param in alpha_list:
 '''
 
             auc_SAL = trapz(protocol_result['SAL'], dx=10)
+            print auc_SAL
             auc_CAL = trapz(protocol_result['CAL'], dx=10)
             #if ht_estimation == False:
             auc_SPL = trapz(protocol_result['SPL'], dx=10)
@@ -165,8 +211,8 @@ for alpha_param in alpha_list:
             if var > 16:
                 plt.xlabel('% of human judgments', size = 16)
 
-            if var == 1 or var == 5 or var == 9 or var == 13 or var == 17:
-                plt.ylabel("lambda = " + str(lambda_param)+'\n F1', size = 16)
+            #if var == 1 or var == 5 or var == 9 or var == 13 or var == 17:
+            #    plt.ylabel("lambda = " + str(lambda_param)+'\n F1', size = 16)
                 #plt.yticks(True)
             plt.ylim([0.5,1])
             #plt.tick_params(axis='x',          # changes apply to the x-axis

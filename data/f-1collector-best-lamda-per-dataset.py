@@ -130,7 +130,7 @@ for datasource in dataset_list: # 1
                     print list
 
                     #if datasource == 'TREC8' or datasource == 'gov2':
-                    list = list[1:11]
+                    #list = list[0:10]
                     #list1 = list[1:len(list)]
                     #if use_ranker == "True":
                     #    list1 = list[0:len(list)-2]
@@ -139,7 +139,15 @@ for datasource in dataset_list: # 1
                     #    list1 = list[1:len(list)]
                     #print length
                     counter = 0
-                    protocol_result[protocol] = list
+                    protocol_result[protocol] = list[0:10]
+
+                    if protocol == 'SAL':
+                        auc_SAL = trapz(list[1:11], dx=10)
+                    elif protocol == 'CAL':
+                        auc_CAL = trapz(list[1:11], dx=10)
+                    else:# if ht_estimation == False:
+                        auc_SPL = trapz(list[1:11], dx=10)
+
                     if protocol == 'SAL':
                         start = 10
                         end = start + (length - 1)*25
@@ -161,11 +169,12 @@ for datasource in dataset_list: # 1
     plt.plot(x_labels_set, protocol_result['SPL'],  marker = 's',color = 'black', label='SPL', linewidth=1.0)
 '''
 
+    '''
     auc_SAL = trapz(protocol_result['SAL'], dx=10)
     auc_CAL = trapz(protocol_result['CAL'], dx=10)
     #if ht_estimation == False:
     auc_SPL = trapz(protocol_result['SPL'], dx=10)
-
+    '''
     #print auc_SAL, auc_CAL, auc_SPL
     #exit(0)
 
@@ -212,6 +221,6 @@ for datasource in dataset_list: # 1
 plt.tight_layout()
 
 #plt.show()
-plt.savefig(plotAddress+'F1measure-best.pdf', format='pdf')
+plt.savefig(plotAddress+'F1measure-best2.pdf', format='pdf')
 
 #exit(0)
