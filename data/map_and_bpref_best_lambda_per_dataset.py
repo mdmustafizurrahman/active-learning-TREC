@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
 gs = gridspec.GridSpec(5, 2)
 
-os.chdir('/media/nahid/Windows8_OS/UbuntuDownloads/trec_eval.9.0/')
+os.chdir('/home/nahid/trec_eval.9.0/')
 
 #base_address1 = "/home/nahid/UT_research/clueweb12/bpref_result/"
 #plotAddress = "/home/nahid/UT_research/clueweb12/bpref_result/plots/tau/mapbpref/"
@@ -13,23 +13,31 @@ os.chdir('/media/nahid/Windows8_OS/UbuntuDownloads/trec_eval.9.0/')
 
 
 base_address1 = "/media/nahid/Windows8_OS/TREC/"
-plotAddress =  "/media/nahid/Windows8_OS/TREC/plots/"
+plotAddress =  "/media/nahid/Windows8_OS/TREC/"
 
-ht_estimation = True
+ht_estimation = False
+crowd = True
+
+dataset_list = ['WT2014','WT2013', 'gov2','TREC8']
 
 if ht_estimation == True:
     print "TRUE"
-    base_address1 = base_address1 + "estimation/"
-    plotAddress = plotAddress + "estimation/"
+    base_address1 = base_address1 + "estimationHTSPL/"
+    plotAddress = plotAddress + "estimationHTSPL/plots/"
 
+if crowd == True:
+    print "TRUE"
+    base_address1 = base_address1 + "estimationCrowd/"
+    plotAddress = plotAddress + "estimationCrowd/plots/"
+    dataset_list = ['WT2014']
 
 protocol_list = ['SAL','CAL', 'SPL']
 #dataset_list = ['gov2']
 #map_list = ['map']
 #map_list = ['bpref']
 
-dataset_list = ['WT2014','WT2013', 'gov2','TREC8']
-#dataset_list = ['WT2014']
+
+#dataset_list = ['TREC8']
 
 ranker_list = ['True']
 sampling_list = ['True']
@@ -82,7 +90,7 @@ for stringUse in map_list:
                     alpha_param = 1
                     train_per_centage = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9,
                                          1.0,]  # skiping seed part which is named as 0.1
-                    lambda_param = 0.5
+                    lambda_param = 0.75
                     alpha_param = 2
 
                 elif datasource == 'TREC8':
@@ -92,7 +100,7 @@ for stringUse in map_list:
                     destinationBase = "/media/nahid/Windows8_OS/modifiedSystemRanking/" + datasource + "/"
                     predictionAddress = "/media/nahid/Windows8_OS/finalDownlaod/TREC/TREC8/prediction/"
                     predictionModifiedAddress = "/media/nahid/Windows8_OS/finalDownlaod/TREC/TREC8/modifiedprediction/"
-                    lambda_param = 0.25
+                    lambda_param = 0.75
                     alpha_param = 1
                     train_per_centage = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9,
                                          1.0, ]  # skiping seed part which is named as 0.1
@@ -104,7 +112,7 @@ for stringUse in map_list:
                     destinationBase = "/media/nahid/Windows8_OS/modifiedSystemRanking/" + datasource + "/"
                     predictionAddress = "/media/nahid/Windows8_OS/finalDownlaod/TREC/WT2013/prediction/"
                     predictionModifiedAddress = "/media/nahid/Windows8_OS/finalDownlaod/TREC/WT2013/modifiedprediction/"
-                    lambda_param = 1.0
+                    lambda_param = 0.75
                     alpha_param = 2
                     train_per_centage = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9,
                                          1.0, ]  # skiping seed part which is named as 0.1
@@ -120,13 +128,19 @@ for stringUse in map_list:
                     train_per_centage = [0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9,
                                          1.0, 1.1]  # skiping seed part which is named as 0.1
 
-                    alpha_param = 2
-                    lambda_param = 0.75
+                    if crowd == True:
+                        alpha_param = 2
+                        lambda_param = 1.0
+                        qrelAdress = '/media/nahid/Windows8_OS/clueweb12/qrels/qrelsadhoc2014crowd.txt'
+
+                    else:
+                        alpha_param = 2
+                        lambda_param = 1.0
 
                 print "Original Part"
 
 
-                '''
+                ######################
                 fileList = os.listdir(originAdress)
                 for fileName in fileList:
                     system = originAdress + fileName
@@ -154,10 +168,10 @@ for stringUse in map_list:
                 text_file.write(tmp)
                 text_file.close()
 
-                exit(0)
-                '''
+                #exit(0)
 
-                originalMapResult = originalMapResult + stringUse+'.txt'
+
+                #originalMapResult = originalMapResult + stringUse+'.txt'
                 f = open(originalMapResult)
                 length = 0
                 tmplist = []
@@ -200,7 +214,8 @@ for stringUse in map_list:
                                     batch) + '_seed:' + str(seed) + '_fold' + str(fold) + '_'
                                 for percentage in train_per_centage:
 
-                                    '''
+                                    ##############################
+
                                     predictionQrel = ""
                                     if stringUse == 'bpref':
                                         predictionQrel = predicted_location_base + str(
@@ -256,7 +271,6 @@ for stringUse in map_list:
                                     text_file.write(tmp)
                                     text_file.close()
 
-                                    '''
                                     #####################
 
 
@@ -326,7 +340,7 @@ for stringUse in map_list:
 
 #plt.suptitle(s1, size=16)
 plt.tight_layout()
-plt.savefig(plotAddress + s1 + 'map_new_HT.pdf', format='pdf')
+plt.savefig(plotAddress + s1 + 'map_bpref_crowd.pdf', format='pdf')
 
 
 

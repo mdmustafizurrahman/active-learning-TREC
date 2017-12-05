@@ -51,8 +51,8 @@ train_per_centage_flag = sys.argv[6]
 
 # if deterministic is False then HT estimation have to True or Vice Versa
 # Here deterministic = True means we sample a topic from a uniform distribution
-deterministic = 'True' # this is hard coded and does not take as an input from command line
-ht_estimation = 'False'
+deterministic = 'False' # this is hard coded and does not take as an input from command line
+ht_estimation = 'True'
 
 
 ##############################

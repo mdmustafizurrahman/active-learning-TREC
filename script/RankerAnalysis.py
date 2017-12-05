@@ -56,7 +56,7 @@ train_per_centage_flag = sys.argv[6]
 
 #parameter set # all FLAGS must be string
 
-datasource = 'WT2013'  # can be  dataset = ['TREC8', 'gov2', 'WT']
+datasource = 'TREC8'  # can be  dataset = ['TREC8', 'gov2', 'WT']
 protocol = 'CAL'  # 'SAL' can be ['SAL', 'CAL', 'SPL']
 use_ranker = 'True'
 iter_sampling = 'True'
@@ -152,7 +152,7 @@ else:
     start_topic = 251
     end_topic = 301
 
-
+topicSkipList = [202,209,225, 237, 245, 255,269, 278, 803, 805]
 #print result_location
 #exit(0)
 class relevance(object):
@@ -486,7 +486,7 @@ for test_size in test_size_set:
                 seed_start = 0
                 seed_counter = 0
 
-                while seed_one_counter < 5:
+                while seed_one_counter < 1:
                     documentNumber = seed_list[seed_counter]
                     seed_counter = seed_counter + 1
                     if documentNumber not in docNo_docIndex:

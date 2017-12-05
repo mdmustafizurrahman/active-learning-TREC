@@ -35,7 +35,8 @@ correction = 'False'
 train_per_centage_flag = 'True'
 
 
-ht_estimation = True
+ht_estimation = False
+crowd = True
 
 
 
@@ -47,12 +48,26 @@ protocol_result = {}
 
 base_address1 = "/media/nahid/Windows8_OS/TREC/"
 
-
+'''
 if ht_estimation == True:
     #print "TRUE"
     base_address1 = base_address1 + "estimation/"
     plotAddress = plotAddress + "estimation/"
     protocol_list = ['CAL', 'SAL', 'SPL']
+
+'''
+#estimation with HT SPL
+if ht_estimation == True:
+    #print "TRUE"
+    base_address1 = base_address1 + "estimationHTSPL/"
+    plotAddress = plotAddress + "estimationHTSPL/plots/"
+    protocol_list = ['CAL', 'SAL', 'SPL']
+
+if crowd == True:
+    print "TRUE"
+    base_address1 = base_address1 + "estimationCrowd/"
+    plotAddress = plotAddress + "estimationCrowd/plots/"
+    dataset_list = ['WT2014']
 
 for alpha_param in alpha_list:
     best_AUC = 0.0
@@ -62,7 +77,7 @@ for alpha_param in alpha_list:
     for lambda_param in lambda_list:
         fig, ax = plt.subplots(nrows=5, ncols=4, figsize=(20, 15))
         var = 1
-        print "$\\alpha$ = ", str(alpha_param),", \& $\lambda$ = ", str(lambda_param),
+        print "$\\alpha$ = ", str(alpha_param),", & $\lambda$ = ", str(lambda_param),
         for datasource in dataset_list:  # 1
 
             base_address2 = base_address1 + str(datasource) + "/"
@@ -107,7 +122,7 @@ for alpha_param in alpha_list:
                             #print list
 
                             #if datasource == 'TREC8' or datasource == 'gov2':
-                            list = list[0:10]
+                            list = list[1:11]
                             #list1 = list[1:len(list)]
                             #if use_ranker == "True":
                             #    list1 = list[0:len(list)-2]

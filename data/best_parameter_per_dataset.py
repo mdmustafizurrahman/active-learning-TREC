@@ -35,7 +35,8 @@ correction = 'False'
 train_per_centage_flag = 'True'
 
 
-ht_estimation = True
+ht_estimation = False
+crowd = True
 
 
 
@@ -53,6 +54,13 @@ if ht_estimation == True:
     base_address1 = base_address1 + "estimation/"
     plotAddress = plotAddress + "estimation/"
     protocol_list = ['SAL', 'CAL', 'SPL']
+
+if crowd == True:
+    print "TRUE"
+    base_address1 = base_address1 + "estimationCrowd/"
+    plotAddress = plotAddress + "estimationCrowd/plots/"
+    dataset_list = ['WT2014']
+
 
 for datasource in dataset_list:  # 1
     best_AUC = 0.0

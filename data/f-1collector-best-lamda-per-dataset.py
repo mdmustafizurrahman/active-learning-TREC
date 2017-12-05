@@ -7,8 +7,10 @@ gs = gridspec.GridSpec(5, 2)
 
 
 
+baseAddress = "/media/nahid/Windows8_OS/TREC/"
 base_address1 = "/media/nahid/Windows8_OS/TREC/"
-plotAddress =  "/media/nahid/Windows8_OS/TREC/plots/"
+plotAddress =  "/media/nahid/Windows8_OS/TREC/"
+
 protocol_list = ['SAL', 'CAL', 'SPL']
 
 '''
@@ -17,16 +19,25 @@ plotAddress =  "/media/nahid/Windows8_OS/TREC/plots/"
 protocol_list = ['SAL', 'CAL', 'SPL']
 '''
 
-ht_estimation = True
+ht_estimation = False
+crowd = True
 uniform_sampling = False # uniform topic sampling
+
 
 lambda_list = [0.0, 0.25, 0.50, 0.75, 1.0]
 alpha_list = [1, 2]
+dataset_list = ['WT2014', 'WT2013','gov2', 'TREC8']
 
 if ht_estimation == True:
     print "TRUE"
-    base_address1 = base_address1 + "estimation/"
-    plotAddress = plotAddress + "estimation/"
+    base_address1 = base_address1 + "estimationHTSPL/"
+    plotAddress = plotAddress + "estimationHTSPL/plots/"
+
+if crowd == True:
+    print "TRUE"
+    base_address1 = base_address1 + "estimationCrowd/"
+    plotAddress = plotAddress + "estimationCrowd/plots/"
+    dataset_list = ['WT2014']
 
 if uniform_sampling == True:
     base_address1 = base_address1 + "UniformTopicSPL/"
@@ -35,7 +46,7 @@ if uniform_sampling == True:
     alpha_list = [1]
 
 protocol_list = ['SAL', 'CAL', 'SPL']
-dataset_list = ['WT2014', 'WT2013','gov2', 'TREC8']
+
 ranker_list = ['True', 'False']
 sampling_list = ['True','False']
 train_per_centage_flag = 'True'
@@ -84,20 +95,24 @@ for datasource in dataset_list: # 1
     print base_address4
 
     if datasource == 'gov2':
-        lambda_param = 0.5
+        lambda_param = 0.75
         alpha_param = 2
 
     elif datasource == 'TREC8':
-        lambda_param = 0.25
+        lambda_param = 0.75
         alpha_param = 1
 
     elif datasource == 'WT2013':
-        lambda_param = 1.0
+        lambda_param = 0.75
         alpha_param = 2
 
     else:
-        alpha_param = 2
-        lambda_param = 0.75
+        if crowd == True:
+            alpha_param = 2
+            lambda_param = 1.0
+        else:
+            alpha_param = 2
+            lambda_param = 1.0
 
     base_address4 = base_address4 + str(lambda_param)+"/" + str(alpha_param) + "/"
     training_variation = []
@@ -204,7 +219,7 @@ for datasource in dataset_list: # 1
     #if var == 7 or var == 8:
     #    plt.legend(loc=2, fontsize = 16)
     #else:
-    plt.legend(loc=4, fontsize=16)
+    plt.legend(loc=2, fontsize=16)
     param = "($\\alpha$ = "+str(alpha_param)+", $\lambda$ = " + str(lambda_param) + ")"
     if datasource == 'gov2':
         plt.title('TB\'06 '+param, size= 16)

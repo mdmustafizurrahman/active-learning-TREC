@@ -17,9 +17,9 @@ plotAddress =  "/media/nahid/Windows8_OS/TREC/plots/"
 protocol_list = ['SAL', 'CAL', 'SPL']
 '''
 
-ht_estimation = False
+ht_estimation = True
 uniform_sampling = False # uniform topic sampling
-deterministic = True
+deterministic = False
 
 lambda_list = [0.0, 0.25, 0.50, 0.75, 1.0]
 alpha_list = [1, 2]
@@ -33,8 +33,8 @@ if ht_estimation == True:
 '''
 # ht_estimation with HT Corrected SPL
 if ht_estimation == True:
-    base_address1 = "/media/nahid/Windows8_OS/clueweb12/topic_dist/estimationHTSPL/"
-    plotAddress = "/media/nahid/Windows8_OS/clueweb12/topic_dist/estimationHTSPL/plots/"
+    base_address1 = "/media/nahid/Windows8_OS/TREC/estimationHTSPL/"
+    plotAddress = "/media/nahid/Windows8_OS/TREC/estimationHTSPL/plots/"
     lambda_list = [0.25]
     alpha_list = [2]
     number_of_rows = 1
@@ -55,27 +55,28 @@ if uniform_sampling == True:
     alpha_list = [1]
     number_of_rows = 1
 
-'''
+
 # roundrobin with normal SPL
 if deterministic == True:
-    base_address1 = "/media/nahid/Windows8_OS/roundrobinBasicSPL/deterministic/"
-    plotAddress = "/media/nahid/Windows8_OS/roundrobinBasicSPL/plots/"
+    base_address1 = "/media/nahid/Windows8_OS/roundrobinBasicSPL1/"
+    plotAddress = "/media/nahid/Windows8_OS/roundrobinBasicSPL1/plots/"
+    lambda_list = [0.0]
+    alpha_list = [1]
+    number_of_rows = 1
+
+
+'''
+# roundrobin with HT SPL
+if deterministic == True:
+    base_address1 = "/media/nahid/Windows8_OS/roundrobinHTSPL1/"
+    plotAddress = "/media/nahid/Windows8_OS/roundrobinHTSPL1/plots/"
     lambda_list = [0.0]
     alpha_list = [1]
     number_of_rows = 1
 '''
 
-# roundrobin with HT SPL
-if deterministic == True:
-    base_address1 = "/media/nahid/Windows8_OS/roundrobinHTSPL/deterministicHTSPL/"
-    plotAddress = "/media/nahid/Windows8_OS/roundrobinHTSPL/plots/"
-    lambda_list = [0.0]
-    alpha_list = [1]
-    number_of_rows = 1
-
-
 protocol_list = ['SAL', 'CAL', 'SPL']
-dataset_list = ['WT2014', 'WT2013']
+dataset_list = ['WT2014', 'WT2013','gov2','TREC8']
 #dataset_list = ['WT2014']
 #protocol_list = ['SL', 'CAL', 'SAL']
 ranker_list = ['True', 'False']

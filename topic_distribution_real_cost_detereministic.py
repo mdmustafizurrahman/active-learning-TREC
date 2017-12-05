@@ -79,7 +79,9 @@ ranker_location["TREC8"] = "/media/nahid/Windows8_OS/unzippedsystemRanking/TREC8
 n_labeled =  10 #50      # number of samples that are initially labeled
 batch_size = 25 #50
 preloaded = True
-topicSkipList = [202,209,225, 237, 245, 255,269, 278, 803, 805] # remember to update the relevance file for this collection accordingly to TAU compute
+#This skip list is used on WWW abondoned paper topicSkipList = [202,209,225, 237, 245, 255,269, 278, 803, 805] # remember to update the relevance file for this collection accordingly to TAU compute
+topicSkipList = [277, 278]
+
 #topicSkipList = [202,210,225,234,235,238,244,251,255,262,269,271,278,283,289,291,803,805]
 
 skipList = []
@@ -102,7 +104,7 @@ else:
 
 if ht_estimation == 'True':
     ht_estimation = True
-    base_address = "/media/nahid/Windows8_OS/clueweb12/topic_dist/estimationHTSPL/"
+    base_address = "/media/nahid/Windows8_OS/clueweb12/topic_dist/estimationHTSPLCrowd/"
 else:
     ht_estimation = False
 
@@ -161,7 +163,7 @@ elif datasource=='WT2013':
     datasetsize = 14474
 else:
     processed_file_location = '/media/nahid/Windows8_OS/clueweb12/pythonprocessed/processed_new.txt'
-    RELEVANCE_DATA_DIR = '/media/nahid/Windows8_OS/clueweb12/qrels/qrelsadhoc2014.txt'
+    RELEVANCE_DATA_DIR = '/media/nahid/Windows8_OS/clueweb12/qrels/qrelsadhoc2014crowd.txt'
     start_topic = 251
     end_topic = 301
     datasetsize = 14432
